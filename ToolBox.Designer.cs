@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBox));
             this.ClearDNS = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Web = new System.Windows.Forms.Button();
-            this.Lunch = new System.Windows.Forms.Button();
+            this.Launch = new System.Windows.Forms.Button();
             this.Logs = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Fast = new System.Windows.Forms.Label();
@@ -97,16 +96,16 @@
             this.Web.UseVisualStyleBackColor = true;
             this.Web.Click += new System.EventHandler(this.Web_Click);
             // 
-            // Lunch
+            // Launch
             // 
-            this.Lunch.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Lunch.Location = new System.Drawing.Point(749, 406);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.Size = new System.Drawing.Size(78, 23);
-            this.Lunch.TabIndex = 3;
-            this.Lunch.Text = "启动AFT";
-            this.Lunch.UseVisualStyleBackColor = true;
-            this.Lunch.Click += new System.EventHandler(this.Button4_Click);
+            this.Launch.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.Launch.Location = new System.Drawing.Point(749, 406);
+            this.Launch.Name = "Launch";
+            this.Launch.Size = new System.Drawing.Size(78, 23);
+            this.Launch.TabIndex = 3;
+            this.Launch.Text = "启动AFT";
+            this.Launch.UseVisualStyleBackColor = true;
+            this.Launch.Click += new System.EventHandler(this.Button4_Click);
             // 
             // Logs
             // 
@@ -397,12 +396,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Logs);
-            this.Controls.Add(this.Lunch);
+            this.Controls.Add(this.Launch);
             this.Controls.Add(this.Web);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.ClearDNS);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
+            this.ShowIcon = false;
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
             this.groupBox1.ResumeLayout(false);
@@ -421,7 +420,7 @@
         private System.Windows.Forms.Button ClearDNS;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Web;
-        private System.Windows.Forms.Button Lunch;
+        private System.Windows.Forms.Button Launch;
         private System.Windows.Forms.TextBox Logs;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Fast;

@@ -78,10 +78,10 @@ namespace AFT_Online_Stater
         private void Delete_Click(object sender, EventArgs e)
         {
             Logs.AppendText("开始删除卡号文件" + Environment.NewLine);
-            if (File.Exists(Directory.GetCurrentDirectory() + "\\device\\felica.txt") && File.Exists(Directory.GetCurrentDirectory() + "\\device\\sram.bin"))
+            if (File.Exists(Directory.GetCurrentDirectory() + @"\device\felica.txt") && File.Exists(Directory.GetCurrentDirectory() + "\\device\\sram.bin"))
             {
-                File.Delete(Directory.GetCurrentDirectory() + "\\device\\felica.txt");
-                File.Delete(Directory.GetCurrentDirectory() + "\\device\\sram.bin");
+                File.Delete(Directory.GetCurrentDirectory() + @"\device\felica.txt");
+                File.Delete(Directory.GetCurrentDirectory() + @"\device\sram.bin");
                 Logs.AppendText("卡号文件删除成功" + Environment.NewLine);
             }
             //else Logs.Text = Logs.Text + Environment.NewLine + "卡号文件删除失败:不存在felica.txt或者sram.bin";
@@ -262,7 +262,7 @@ namespace AFT_Online_Stater
             string FLChanger = "";
             string FLSetting = "";
 
-            StreamReader ReadFL = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader ReadFL = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             while (ReadFL.ReadLine() != null)
             {
                 FLReader = ReadFL.ReadLine();
@@ -275,15 +275,15 @@ namespace AFT_Online_Stater
                 }
             }
             ReadFL.Close();
-            StreamReader ReplaceFL = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader ReplaceFL = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             Replace = ReplaceFL.ReadToEnd();
             ReplaceFL.Close();
             Replace = Replace.Replace(FLSetting, FLReader);
-            StreamWriter WriteFL = new StreamWriter(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamWriter WriteFL = new StreamWriter(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             WriteFL.Write(Replace);
             WriteFL.Flush();
             WriteFL.Close();
-            StreamReader CheckFL = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader CheckFL = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Check = CheckFL.ReadToEnd();
             CheckFL.Close();
             bool Fastloader = false;
@@ -305,15 +305,15 @@ namespace AFT_Online_Stater
 
         private void Score_Click(object sender, EventArgs e)
         {
-            StreamReader ReadScore = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader ReadScore = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Replace = ReadScore.ReadToEnd();
             ReadScore.Close();
             Replace = Replace.Replace("score_saver =true", "score_saver =false");
-            StreamWriter WriteSC = new StreamWriter(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamWriter WriteSC = new StreamWriter(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             WriteSC.Write(Replace);
             WriteSC.Flush();
             WriteSC.Close();
-            StreamReader CheckSC = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader CheckSC = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Check = CheckSC.ReadToEnd();
             CheckSC.Close();
             bool Scoresaver = false;
@@ -334,15 +334,15 @@ namespace AFT_Online_Stater
 
         private void Player_Click(object sender, EventArgs e)
         {
-            StreamReader ReadPlayer = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader ReadPlayer = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Replace = ReadPlayer.ReadToEnd();
             ReadPlayer.Close();
             Replace = Replace.Replace("player_data_manager =true", "player_data_manager =false");
-            StreamWriter WritePL = new StreamWriter(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamWriter WritePL = new StreamWriter(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             WritePL.Write(Replace);
             WritePL.Flush();
             WritePL.Close();
-            StreamReader CheckPL = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader CheckPL = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Check = CheckPL.ReadToEnd();
             CheckPL.Close();
             bool PlayerData = false;
@@ -363,15 +363,15 @@ namespace AFT_Online_Stater
 
         private void Stage_Click(object sender, EventArgs e)
         {
-            StreamReader ReadStage = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader ReadStage = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Replace = ReadStage.ReadToEnd();
             ReadStage.Close();
             Replace = Replace.Replace("stage_manager =true", "stage_manager =false");
-            StreamWriter WriteSM = new StreamWriter(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamWriter WriteSM = new StreamWriter(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             WriteSM.Write(Replace);
             WriteSM.Flush();
             WriteSM.Close();
-            StreamReader CheckSM = new StreamReader(Directory.GetCurrentDirectory() + "\\plugins\\components.ini");
+            StreamReader CheckSM = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\components.ini");
             string Check = CheckSM.ReadToEnd();
             CheckSM.Close();
             bool StageManager = false;
@@ -544,6 +544,27 @@ namespace AFT_Online_Stater
                 IRWriter.Close();
                 Logs.AppendText("Internal Resolution -- Enabled" + Environment.NewLine);
             }
+            string ResolutionReader = "";
+            string NewResolution;
+            StreamReader GetResolution = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\config.ini");
+            StreamReader Resolution = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\config.ini");
+            StreamReader OldResolution = new StreamReader(Directory.GetCurrentDirectory() + @"\plugins\config.ini");
+            NewResolution = OldResolution.ReadToEnd();
+            while (GetResolution.ReadLine() != null)
+            {
+                ResolutionReader = Resolution.ReadLine();
+                if ((ResolutionReader.IndexOf("Width=") != -1) && (ResolutionReader.IndexOf("r.Width=") == -1)) NewResolution= NewResolution.Replace(ResolutionReader, ResolutionReader.Replace(ResolutionReader.Replace("Width=", ""), WidthBox.Text));
+                if ((ResolutionReader.IndexOf("Height=") != -1) && (ResolutionReader.IndexOf("r.Height=") == -1)) NewResolution = NewResolution.Replace(ResolutionReader, ResolutionReader.Replace(ResolutionReader.Replace("Height=", ""), HeightBox.Text));
+                if (ResolutionReader.IndexOf("r.Width=") != -1) NewResolution = NewResolution.Replace(ResolutionReader, ResolutionReader.Replace(ResolutionReader.Replace("r.Width=", ""), RHeightBox.Text));
+                if (ResolutionReader.IndexOf("r.Height=") != -1) NewResolution = NewResolution.Replace(ResolutionReader, ResolutionReader.Replace(ResolutionReader.Replace("r.Height=", ""), RWidthBox.Text));
+            }
+            GetResolution.Close();
+            Resolution.Close();
+            OldResolution.Close();
+            StreamWriter ResolutionWriter = new StreamWriter(Directory.GetCurrentDirectory() + @"\plugins\config.ini");
+            ResolutionWriter.Flush();
+            ResolutionWriter.Write(NewResolution);
+            ResolutionWriter.Close();
         }
     }
 }

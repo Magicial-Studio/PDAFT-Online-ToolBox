@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{588304A4-328F-4B02-8C00-B06EDA661E59}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AFT_Online_Stater</RootNamespace>
-    <AssemblyName>AFT_Online_Stater</AssemblyName>
+    <RootNamespace>PDAFT_Online_ToolBox</RootNamespace>
+    <AssemblyName>PDAFT_Online_ToolBox</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -64,6 +64,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
