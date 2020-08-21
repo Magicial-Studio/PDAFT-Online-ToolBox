@@ -246,6 +246,7 @@ namespace AFT_Online_Stater
                         ServerValue = ServerReader.Replace("default=", "");
                         GameServer.Text = ServerValue;
                         Gameserver.Close();
+                        GetGameserver.Close();
                         break;
                     }
                 }
