@@ -72,7 +72,7 @@ namespace AFT_Online_Stater
         private void Web_Click(object sender, EventArgs e)
         {
             Logs.AppendText("网页管理界面已打开" + Environment.NewLine);
-            Process.Start("http://aqua.samnyan.icu/");
+            Process.Start("http://aqua.raspberrymonster.top/");
         }
 
         private void Delete_Click(object sender, EventArgs e)

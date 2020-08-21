@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBox));
             this.ClearDNS = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Web = new System.Windows.Forms.Button();
@@ -400,8 +401,8 @@
             this.Controls.Add(this.Web);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.ClearDNS);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
-            this.ShowIcon = false;
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
             this.groupBox1.ResumeLayout(false);
