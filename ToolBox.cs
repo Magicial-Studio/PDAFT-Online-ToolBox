@@ -162,26 +162,26 @@ namespace AFT_Online_Stater
 
         private void FastLoaderCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            _components["components"]["fast_loader"] = FastLoaderCheckBox.Checked.ToString();
+            _components["components"]["fast_loader"] = FastLoaderCheckBox.Checked.ToString().ToLowerInvariant();
             // _components["components"]["fast_loader_speed"] = "4";
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
         private void ScoreSaverCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            _components["components"]["score_saver"] = ScoreSaverCheckBox.Checked.ToString();
+            _components["components"]["score_saver"] = ScoreSaverCheckBox.Checked.ToString().ToLowerInvariant();
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
         private void Player_Click(object sender, EventArgs e)
         {
-            _components["components"]["player_data_manager"] = PlayerDataManagerCheckBox.Checked.ToString();
+            _components["components"]["player_data_manager"] = PlayerDataManagerCheckBox.Checked.ToString().ToLowerInvariant();
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
         private void Stage_Click(object sender, EventArgs e)
         {
-            _components["components"]["stage_manager"] = StageManagerCheckBox.Checked.ToString();
+            _components["components"]["stage_manager"] = StageManagerCheckBox.Checked.ToString().ToLowerInvariant();
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
