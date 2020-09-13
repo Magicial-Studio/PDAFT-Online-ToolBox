@@ -18,7 +18,7 @@ namespace AFT_Online_Stater
         {
             Parser = {Configuration = {CommentString = "#"}}
         };
-        
+
         private readonly FileIniDataParser _segatoolsIniParser = new FileIniDataParser()
         {
             Parser = {Configuration = {CommentString = ";"}}
@@ -134,6 +134,7 @@ namespace AFT_Online_Stater
 
         private void DeleteAccountButton_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("确认删除账号?", "", MessageBoxButtons.YesNo) != DialogResult.Yes) return;
             if (File.Exists("DEVICE\\felica.txt"))
             {
                 File.Delete("DEVICE\\felica.txt");
@@ -201,9 +202,9 @@ namespace AFT_Online_Stater
 
         private void SaveGraphics_Click(object sender, EventArgs e)
         {
-            _config["Graphics"]["TAA"] = (TAACheckBox.Checked ? 0 : 1).ToString();
-            _config["Graphics"]["MLAA"] = (MLAACheckBox.Checked ? 0 : 1).ToString();
-            _graphics.Global["dxgi"] = (DirectXCheckBox.Checked ? 0 : 1).ToString();
+            _config["Graphics"]["TAA"] = (TAACheckBox.Checked ? 1 : 0).ToString();
+            _config["Graphics"]["MLAA"] = (MLAACheckBox.Checked ? 1 : 0).ToString();
+            _graphics.Global["dxgi"] = (DirectXCheckBox.Checked ? 1 : 0).ToString();
             UpdateGraphicsAPIStatusLabel();
             _config["Resolution"]["Height"] = HeightTextBox.Text;
             _config["Resolution"]["Width"] = WidthTextBox.Text;
