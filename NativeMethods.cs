@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace AFT_Online_Stater
+namespace PDAFT_Online_ToolBox
 {
     public class NativeMethods
     {

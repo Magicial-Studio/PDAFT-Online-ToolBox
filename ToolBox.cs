@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
 
-namespace AFT_Online_Stater
+namespace PDAFT_Online_ToolBox
 {
     public partial class ToolBox : Form
     {
@@ -14,12 +14,12 @@ namespace AFT_Online_Stater
             InitializeComponent();
         }
 
-        private readonly FileIniDataParser _iniParser = new FileIniDataParser()
+        private readonly FileIniDataParser _iniParser = new FileIniDataParser
         {
             Parser = {Configuration = {CommentString = "#"}}
         };
 
-        private readonly FileIniDataParser _segatoolsIniParser = new FileIniDataParser()
+        private readonly FileIniDataParser _segatoolsIniParser = new FileIniDataParser
         {
             Parser = {Configuration = {CommentString = ";"}}
         };
@@ -88,7 +88,7 @@ namespace AFT_Online_Stater
 
             StageManagerCheckBox.Checked = _components["components"]["stage_manager"] == "true";
 
-            LaunchPDButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
+            UsePDLoaderButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
 
             GameServerTextBox.Text = _segatools["dns"]["default"];
         }
@@ -98,7 +98,7 @@ namespace AFT_Online_Stater
             GraphicsAPIStatusLabel.Text = $"Graphics API -- {(DirectXCheckBox.Checked ? "DirectX 11" : "OpenGL")}";
         }
 
-        private void ClearDNS_Click(object sender, EventArgs e)
+        private void ClearDNSButton_Click(object sender, EventArgs e)
         {
             NativeMethods.FlushDNSResolverCache();
         }
@@ -127,7 +127,7 @@ namespace AFT_Online_Stater
             }); //启动diva.exe
         }
 
-        private void WebUI_Click(object sender, EventArgs e)
+        private void WebUIButton_Click(object sender, EventArgs e)
         {
             Process.Start("http://aqua.raspberrymonster.top/");
         }
@@ -146,17 +146,17 @@ namespace AFT_Online_Stater
             }
         }
 
-        private void LaunchPDButton_Click(object sender, EventArgs e)
+        private void UsePDLoaderButton_Click(object sender, EventArgs e)
         {
-            switch (LaunchPDButton.Text)
+            switch (UsePDLoaderButton.Text)
             {
                 case "启用PD-Loader":
                     File.Move("Launcher.dva", "plugins\\Launcher.dva");
-                    LaunchPDButton.Text = "禁用PD-Loader";
+                    UsePDLoaderButton.Text = "禁用PD-Loader";
                     break;
                 case "禁用PD-Loader":
                     File.Move("plugins\\Launcher.dva", "Launcher.dva");
-                    LaunchPDButton.Text = "启用PD-Loader";
+                    UsePDLoaderButton.Text = "启用PD-Loader";
                     break;
             }
         }
@@ -174,13 +174,13 @@ namespace AFT_Online_Stater
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
-        private void Player_Click(object sender, EventArgs e)
+        private void PlayerDataManagerCheckBox_Click(object sender, EventArgs e)
         {
             _components["components"]["player_data_manager"] = PlayerDataManagerCheckBox.Checked.ToString().ToLowerInvariant();
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
-        private void Stage_Click(object sender, EventArgs e)
+        private void StageManagerCheckBox_Click(object sender, EventArgs e)
         {
             _components["components"]["stage_manager"] = StageManagerCheckBox.Checked.ToString().ToLowerInvariant();
             _iniParser.WriteFile("plugins\\components.ini", _components);
@@ -192,15 +192,7 @@ namespace AFT_Online_Stater
             _segatoolsIniParser.WriteFile("segatools.ini", _segatools);
         }
 
-        private void TAACheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void MLAACheck_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void SaveGraphics_Click(object sender, EventArgs e)
+        private void SaveGraphicsButton_Click(object sender, EventArgs e)
         {
             _config["Graphics"]["TAA"] = (TAACheckBox.Checked ? 1 : 0).ToString();
             _config["Graphics"]["MLAA"] = (MLAACheckBox.Checked ? 1 : 0).ToString();

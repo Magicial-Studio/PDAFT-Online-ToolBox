@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AFT_Online_Stater
+namespace PDAFT_Online_ToolBox
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace AFT_Online_Stater
+﻿namespace PDAFT_Online_ToolBox
 {
     partial class ToolBox
     {
@@ -33,7 +33,7 @@
             this.DeleteAccountButton = new System.Windows.Forms.Button();
             this.WebUIButton = new System.Windows.Forms.Button();
             this.LaunchDivaButton = new System.Windows.Forms.Button();
-            this.LaunchPDButton = new System.Windows.Forms.Button();
+            this.UsePDLoaderButton = new System.Windows.Forms.Button();
             this.FastLoaderCheckBox = new System.Windows.Forms.CheckBox();
             this.ScoreSaverCheckBox = new System.Windows.Forms.CheckBox();
             this.PlayerDataManagerCheckBox = new System.Windows.Forms.CheckBox();
@@ -66,13 +66,13 @@
             // ClearDNSButton
             // 
             this.ClearDNSButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.ClearDNSButton.Location = new System.Drawing.Point(301, 431);
+            this.ClearDNSButton.Location = new System.Drawing.Point(301, 390);
             this.ClearDNSButton.Name = "ClearDNSButton";
             this.ClearDNSButton.Size = new System.Drawing.Size(101, 23);
             this.ClearDNSButton.TabIndex = 0;
             this.ClearDNSButton.Text = "清除DNS缓存";
             this.ClearDNSButton.UseVisualStyleBackColor = true;
-            this.ClearDNSButton.Click += new System.EventHandler(this.ClearDNS_Click);
+            this.ClearDNSButton.Click += new System.EventHandler(this.ClearDNSButton_Click);
             // 
             // DeleteAccountButton
             // 
@@ -88,18 +88,18 @@
             // WebUIButton
             // 
             this.WebUIButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.WebUIButton.Location = new System.Drawing.Point(301, 470);
+            this.WebUIButton.Location = new System.Drawing.Point(301, 419);
             this.WebUIButton.Name = "WebUIButton";
             this.WebUIButton.Size = new System.Drawing.Size(78, 23);
             this.WebUIButton.TabIndex = 2;
             this.WebUIButton.Text = "网页管理";
             this.WebUIButton.UseVisualStyleBackColor = true;
-            this.WebUIButton.Click += new System.EventHandler(this.WebUI_Click);
+            this.WebUIButton.Click += new System.EventHandler(this.WebUIButton_Click);
             // 
             // LaunchDivaButton
             // 
             this.LaunchDivaButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.LaunchDivaButton.Location = new System.Drawing.Point(385, 470);
+            this.LaunchDivaButton.Location = new System.Drawing.Point(301, 448);
             this.LaunchDivaButton.Name = "LaunchDivaButton";
             this.LaunchDivaButton.Size = new System.Drawing.Size(78, 23);
             this.LaunchDivaButton.TabIndex = 3;
@@ -107,22 +107,22 @@
             this.LaunchDivaButton.UseVisualStyleBackColor = true;
             this.LaunchDivaButton.Click += new System.EventHandler(this.LaunchDivaButton_Click);
             // 
-            // LaunchPDButton
+            // UsePDLoaderButton
             // 
-            this.LaunchPDButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.LaunchPDButton.Location = new System.Drawing.Point(302, 397);
-            this.LaunchPDButton.Name = "LaunchPDButton";
-            this.LaunchPDButton.Size = new System.Drawing.Size(111, 23);
-            this.LaunchPDButton.TabIndex = 5;
-            this.LaunchPDButton.Text = "启用PD-Loader";
-            this.LaunchPDButton.UseVisualStyleBackColor = true;
-            this.LaunchPDButton.Click += new System.EventHandler(this.LaunchPDButton_Click);
+            this.UsePDLoaderButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.UsePDLoaderButton.Location = new System.Drawing.Point(301, 361);
+            this.UsePDLoaderButton.Name = "UsePDLoaderButton";
+            this.UsePDLoaderButton.Size = new System.Drawing.Size(111, 23);
+            this.UsePDLoaderButton.TabIndex = 5;
+            this.UsePDLoaderButton.Text = "启用PD-Loader";
+            this.UsePDLoaderButton.UseVisualStyleBackColor = true;
+            this.UsePDLoaderButton.Click += new System.EventHandler(this.UsePDLoaderButton_Click);
             // 
             // FastLoaderCheckBox
             // 
             this.FastLoaderCheckBox.AutoSize = true;
             this.FastLoaderCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.FastLoaderCheckBox.Location = new System.Drawing.Point(6, 22);
+            this.FastLoaderCheckBox.Location = new System.Drawing.Point(10, 24);
             this.FastLoaderCheckBox.Name = "FastLoaderCheckBox";
             this.FastLoaderCheckBox.Size = new System.Drawing.Size(95, 21);
             this.FastLoaderCheckBox.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             this.ScoreSaverCheckBox.AutoSize = true;
             this.ScoreSaverCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.ScoreSaverCheckBox.Location = new System.Drawing.Point(5, 51);
+            this.ScoreSaverCheckBox.Location = new System.Drawing.Point(10, 51);
             this.ScoreSaverCheckBox.Name = "ScoreSaverCheckBox";
             this.ScoreSaverCheckBox.Size = new System.Drawing.Size(96, 21);
             this.ScoreSaverCheckBox.TabIndex = 7;
@@ -144,24 +144,24 @@
             // 
             this.PlayerDataManagerCheckBox.AutoSize = true;
             this.PlayerDataManagerCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.PlayerDataManagerCheckBox.Location = new System.Drawing.Point(5, 83);
+            this.PlayerDataManagerCheckBox.Location = new System.Drawing.Point(10, 78);
             this.PlayerDataManagerCheckBox.Name = "PlayerDataManagerCheckBox";
             this.PlayerDataManagerCheckBox.Size = new System.Drawing.Size(150, 21);
             this.PlayerDataManagerCheckBox.TabIndex = 8;
             this.PlayerDataManagerCheckBox.Text = "Player Data Manager";
-            this.PlayerDataManagerCheckBox.Click += new System.EventHandler(this.Player_Click);
+            this.PlayerDataManagerCheckBox.Click += new System.EventHandler(this.PlayerDataManagerCheckBox_Click);
             // 
             // StageManagerCheckBox
             // 
             this.StageManagerCheckBox.AutoSize = true;
             this.StageManagerCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.StageManagerCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.StageManagerCheckBox.Location = new System.Drawing.Point(5, 112);
+            this.StageManagerCheckBox.Location = new System.Drawing.Point(10, 105);
             this.StageManagerCheckBox.Name = "StageManagerCheckBox";
             this.StageManagerCheckBox.Size = new System.Drawing.Size(117, 21);
             this.StageManagerCheckBox.TabIndex = 9;
             this.StageManagerCheckBox.Text = "Stage Manager";
-            this.StageManagerCheckBox.Click += new System.EventHandler(this.Stage_Click);
+            this.StageManagerCheckBox.Click += new System.EventHandler(this.StageManagerCheckBox_Click);
             // 
             // GameServerTextBox
             // 
@@ -200,7 +200,7 @@
             this.groupBox1.Controls.Add(this.PlayerDataManagerCheckBox);
             this.groupBox1.Controls.Add(this.StageManagerCheckBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 321);
+            this.groupBox1.Location = new System.Drawing.Point(12, 299);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 172);
             this.groupBox1.TabIndex = 13;
@@ -211,7 +211,7 @@
             // 
             this.GraphicsAPIStatusLabel.AutoSize = true;
             this.GraphicsAPIStatusLabel.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.GraphicsAPIStatusLabel.Location = new System.Drawing.Point(24, 139);
+            this.GraphicsAPIStatusLabel.Location = new System.Drawing.Point(24, 129);
             this.GraphicsAPIStatusLabel.Name = "GraphicsAPIStatusLabel";
             this.GraphicsAPIStatusLabel.Size = new System.Drawing.Size(82, 17);
             this.GraphicsAPIStatusLabel.TabIndex = 10;
@@ -249,7 +249,7 @@
             this.GraphicsSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.GraphicsSettingsGroupBox.Location = new System.Drawing.Point(12, 120);
             this.GraphicsSettingsGroupBox.Name = "GraphicsSettingsGroupBox";
-            this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 195);
+            this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 159);
             this.GraphicsSettingsGroupBox.TabIndex = 15;
             this.GraphicsSettingsGroupBox.TabStop = false;
             this.GraphicsSettingsGroupBox.Text = "显示设定";
@@ -257,13 +257,13 @@
             // SaveGraphicsButton
             // 
             this.SaveGraphicsButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.SaveGraphicsButton.Location = new System.Drawing.Point(326, 148);
+            this.SaveGraphicsButton.Location = new System.Drawing.Point(370, 128);
             this.SaveGraphicsButton.Name = "SaveGraphicsButton";
             this.SaveGraphicsButton.Size = new System.Drawing.Size(75, 23);
             this.SaveGraphicsButton.TabIndex = 13;
             this.SaveGraphicsButton.Text = "保存";
             this.SaveGraphicsButton.UseVisualStyleBackColor = true;
-            this.SaveGraphicsButton.Click += new System.EventHandler(this.SaveGraphics_Click);
+            this.SaveGraphicsButton.Click += new System.EventHandler(this.SaveGraphicsButton_Click);
             // 
             // DirectXCheckBox
             // 
@@ -284,7 +284,6 @@
             this.MLAACheckBox.TabIndex = 11;
             this.MLAACheckBox.Text = "MLAA";
             this.MLAACheckBox.UseVisualStyleBackColor = true;
-            this.MLAACheckBox.CheckedChanged += new System.EventHandler(this.MLAACheck_CheckedChanged);
             // 
             // IRCheck
             // 
@@ -305,7 +304,6 @@
             this.TAACheckBox.TabIndex = 9;
             this.TAACheckBox.Text = "TAA";
             this.TAACheckBox.UseVisualStyleBackColor = true;
-            this.TAACheckBox.CheckedChanged += new System.EventHandler(this.TAACheckBox_CheckedChanged);
             // 
             // RHeightTextBox
             // 
@@ -379,11 +377,11 @@
             this.Controls.Add(this.GraphicsSettingsGroupBox);
             this.Controls.Add(this.ServerSettingsGroupBox);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.LaunchPDButton);
+            this.Controls.Add(this.UsePDLoaderButton);
             this.Controls.Add(this.LaunchDivaButton);
             this.Controls.Add(this.WebUIButton);
             this.Controls.Add(this.ClearDNSButton);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
@@ -394,13 +392,14 @@
             this.GraphicsSettingsGroupBox.ResumeLayout(false);
             this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button ClearDNSButton;
         private System.Windows.Forms.Button DeleteAccountButton;
         private System.Windows.Forms.Button WebUIButton;
         private System.Windows.Forms.Button LaunchDivaButton;
-        private System.Windows.Forms.Button LaunchPDButton;
+        private System.Windows.Forms.Button UsePDLoaderButton;
         private System.Windows.Forms.CheckBox FastLoaderCheckBox;
         private System.Windows.Forms.CheckBox ScoreSaverCheckBox;
         private System.Windows.Forms.CheckBox PlayerDataManagerCheckBox;
