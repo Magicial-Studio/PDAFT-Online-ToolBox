@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
@@ -29,7 +31,7 @@ namespace PDAFT_Online_ToolBox
         private IniData _config;
         private IniData _segatools;
 
-        private void ToolBox_Load(object sender, EventArgs e)
+        private async void ToolBox_Load(object sender, EventArgs e)
         {
             Directory.SetCurrentDirectory(Application.StartupPath);
             if (!File.Exists("diva.exe"))
@@ -91,6 +93,22 @@ namespace PDAFT_Online_ToolBox
             UsePDLoaderButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
 
             GameServerTextBox.Text = _segatools["dns"]["default"];
+
+            var subnet = _segatools["keychip"]["subnet"];
+            SubnetTextBox.Text = subnet;
+
+            await Task.Run(() =>
+            {
+                if (NativeMethods.GetBestRoute(BitConverter.ToUInt32(IPAddress.Parse("114.114.114.114").GetAddressBytes(), 0), 0, out var pRoute) == 0)
+                {
+                    var bytes = new IPAddress(pRoute.dwForwardNextHop).GetAddressBytes();
+                    bytes[3] = 0;
+                    var testedSubnet = new IPAddress(bytes).ToString();
+
+                    if (!subnet.Equals(testedSubnet))
+                        SubnetTextBox.Text = testedSubnet;
+                }
+            });
         }
 
         private void UpdateGraphicsAPIStatusLabel()
@@ -189,6 +207,7 @@ namespace PDAFT_Online_ToolBox
         private void SaveGameServerButton_Click(object sender, EventArgs e)
         {
             _segatools["dns"]["default"] = GameServerTextBox.Text;
+            _segatools["keychip"]["subnet"] = SubnetTextBox.Text;
             _segatoolsIniParser.WriteFile("segatools.ini", _segatools);
         }
 

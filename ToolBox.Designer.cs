@@ -44,6 +44,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GraphicsAPIStatusLabel = new System.Windows.Forms.Label();
             this.ServerSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SubnetLabel = new System.Windows.Forms.Label();
+            this.SubnetTextBox = new System.Windows.Forms.TextBox();
             this.GraphicsSettingsGroupBox = new System.Windows.Forms.GroupBox();
             this.SaveGraphicsButton = new System.Windows.Forms.Button();
             this.DirectXCheckBox = new System.Windows.Forms.CheckBox();
@@ -66,7 +68,7 @@
             // ClearDNSButton
             // 
             this.ClearDNSButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.ClearDNSButton.Location = new System.Drawing.Point(301, 390);
+            this.ClearDNSButton.Location = new System.Drawing.Point(301, 440);
             this.ClearDNSButton.Name = "ClearDNSButton";
             this.ClearDNSButton.Size = new System.Drawing.Size(101, 23);
             this.ClearDNSButton.TabIndex = 0;
@@ -77,7 +79,7 @@
             // DeleteAccountButton
             // 
             this.DeleteAccountButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.DeleteAccountButton.Location = new System.Drawing.Point(6, 63);
+            this.DeleteAccountButton.Location = new System.Drawing.Point(6, 123);
             this.DeleteAccountButton.Name = "DeleteAccountButton";
             this.DeleteAccountButton.Size = new System.Drawing.Size(78, 23);
             this.DeleteAccountButton.TabIndex = 1;
@@ -88,7 +90,7 @@
             // WebUIButton
             // 
             this.WebUIButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.WebUIButton.Location = new System.Drawing.Point(301, 419);
+            this.WebUIButton.Location = new System.Drawing.Point(301, 469);
             this.WebUIButton.Name = "WebUIButton";
             this.WebUIButton.Size = new System.Drawing.Size(78, 23);
             this.WebUIButton.TabIndex = 2;
@@ -99,7 +101,7 @@
             // LaunchDivaButton
             // 
             this.LaunchDivaButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.LaunchDivaButton.Location = new System.Drawing.Point(301, 448);
+            this.LaunchDivaButton.Location = new System.Drawing.Point(301, 498);
             this.LaunchDivaButton.Name = "LaunchDivaButton";
             this.LaunchDivaButton.Size = new System.Drawing.Size(78, 23);
             this.LaunchDivaButton.TabIndex = 3;
@@ -110,7 +112,7 @@
             // UsePDLoaderButton
             // 
             this.UsePDLoaderButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.UsePDLoaderButton.Location = new System.Drawing.Point(301, 361);
+            this.UsePDLoaderButton.Location = new System.Drawing.Point(301, 411);
             this.UsePDLoaderButton.Name = "UsePDLoaderButton";
             this.UsePDLoaderButton.Size = new System.Drawing.Size(111, 23);
             this.UsePDLoaderButton.TabIndex = 5;
@@ -184,7 +186,7 @@
             // SaveGameServerButton
             // 
             this.SaveGameServerButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.SaveGameServerButton.Location = new System.Drawing.Point(370, 63);
+            this.SaveGameServerButton.Location = new System.Drawing.Point(370, 123);
             this.SaveGameServerButton.Name = "SaveGameServerButton";
             this.SaveGameServerButton.Size = new System.Drawing.Size(75, 23);
             this.SaveGameServerButton.TabIndex = 12;
@@ -200,7 +202,7 @@
             this.groupBox1.Controls.Add(this.PlayerDataManagerCheckBox);
             this.groupBox1.Controls.Add(this.StageManagerCheckBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 299);
+            this.groupBox1.Location = new System.Drawing.Point(12, 349);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 172);
             this.groupBox1.TabIndex = 13;
@@ -219,17 +221,37 @@
             // 
             // ServerSettingsGroupBox
             // 
+            this.ServerSettingsGroupBox.Controls.Add(this.SubnetLabel);
             this.ServerSettingsGroupBox.Controls.Add(this.ServerLabel);
+            this.ServerSettingsGroupBox.Controls.Add(this.SubnetTextBox);
             this.ServerSettingsGroupBox.Controls.Add(this.GameServerTextBox);
             this.ServerSettingsGroupBox.Controls.Add(this.SaveGameServerButton);
             this.ServerSettingsGroupBox.Controls.Add(this.DeleteAccountButton);
             this.ServerSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.ServerSettingsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.ServerSettingsGroupBox.Name = "ServerSettingsGroupBox";
-            this.ServerSettingsGroupBox.Size = new System.Drawing.Size(451, 92);
+            this.ServerSettingsGroupBox.Size = new System.Drawing.Size(451, 152);
             this.ServerSettingsGroupBox.TabIndex = 14;
             this.ServerSettingsGroupBox.TabStop = false;
             this.ServerSettingsGroupBox.Text = "服务器设定";
+            // 
+            // SubnetLabel
+            // 
+            this.SubnetLabel.AutoSize = true;
+            this.SubnetLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.SubnetLabel.Location = new System.Drawing.Point(10, 52);
+            this.SubnetLabel.Name = "SubnetLabel";
+            this.SubnetLabel.Size = new System.Drawing.Size(32, 17);
+            this.SubnetLabel.TabIndex = 11;
+            this.SubnetLabel.Text = "子网";
+            // 
+            // SubnetTextBox
+            // 
+            this.SubnetTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.SubnetTextBox.Location = new System.Drawing.Point(88, 49);
+            this.SubnetTextBox.Name = "SubnetTextBox";
+            this.SubnetTextBox.Size = new System.Drawing.Size(357, 23);
+            this.SubnetTextBox.TabIndex = 10;
             // 
             // GraphicsSettingsGroupBox
             // 
@@ -247,7 +269,7 @@
             this.GraphicsSettingsGroupBox.Controls.Add(this.WidthTextBox);
             this.GraphicsSettingsGroupBox.Controls.Add(this.RLabel);
             this.GraphicsSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.GraphicsSettingsGroupBox.Location = new System.Drawing.Point(12, 120);
+            this.GraphicsSettingsGroupBox.Location = new System.Drawing.Point(12, 170);
             this.GraphicsSettingsGroupBox.Name = "GraphicsSettingsGroupBox";
             this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 159);
             this.GraphicsSettingsGroupBox.TabIndex = 15;
@@ -373,7 +395,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 508);
+            this.ClientSize = new System.Drawing.Size(481, 542);
             this.Controls.Add(this.GraphicsSettingsGroupBox);
             this.Controls.Add(this.ServerSettingsGroupBox);
             this.Controls.Add(this.groupBox1);
@@ -381,7 +403,8 @@
             this.Controls.Add(this.LaunchDivaButton);
             this.Controls.Add(this.WebUIButton);
             this.Controls.Add(this.ClearDNSButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
@@ -392,8 +415,10 @@
             this.GraphicsSettingsGroupBox.ResumeLayout(false);
             this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.Label SubnetLabel;
+        private System.Windows.Forms.TextBox SubnetTextBox;
 
         private System.Windows.Forms.Button ClearDNSButton;
         private System.Windows.Forms.Button DeleteAccountButton;
