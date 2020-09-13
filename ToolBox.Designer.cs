@@ -23,169 +23,153 @@
         #region Windows 窗体设计器生成的代码
 
         /// <summary>
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBox));
-            this.ClearDNS = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.Web = new System.Windows.Forms.Button();
-            this.Launch = new System.Windows.Forms.Button();
-            this.Logs = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Fast = new System.Windows.Forms.Label();
-            this.Score = new System.Windows.Forms.Label();
-            this.Player = new System.Windows.Forms.Label();
-            this.Stage = new System.Windows.Forms.Label();
-            this.GameServer = new System.Windows.Forms.TextBox();
+            this.ClearDNSButton = new System.Windows.Forms.Button();
+            this.DeleteAccountButton = new System.Windows.Forms.Button();
+            this.WebUIButton = new System.Windows.Forms.Button();
+            this.LaunchDivaButton = new System.Windows.Forms.Button();
+            this.LaunchPDButton = new System.Windows.Forms.Button();
+            this.FastLoaderCheckBox = new System.Windows.Forms.CheckBox();
+            this.ScoreSaverCheckBox = new System.Windows.Forms.CheckBox();
+            this.PlayerDataManagerCheckBox = new System.Windows.Forms.CheckBox();
+            this.StageManagerCheckBox = new System.Windows.Forms.CheckBox();
+            this.GameServerTextBox = new System.Windows.Forms.TextBox();
             this.ServerLabel = new System.Windows.Forms.Label();
-            this.SaveGameServer = new System.Windows.Forms.Button();
+            this.SaveGameServerButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.API = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.SaveGraphics = new System.Windows.Forms.Button();
-            this.DirectXCheck = new System.Windows.Forms.CheckBox();
-            this.MLAACheck = new System.Windows.Forms.CheckBox();
+            this.GraphicsAPIStatusLabel = new System.Windows.Forms.Label();
+            this.ServerSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.GraphicsSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.SaveGraphicsButton = new System.Windows.Forms.Button();
+            this.DirectXCheckBox = new System.Windows.Forms.CheckBox();
+            this.MLAACheckBox = new System.Windows.Forms.CheckBox();
             this.IRCheck = new System.Windows.Forms.CheckBox();
-            this.TAACheck = new System.Windows.Forms.CheckBox();
-            this.RHeightBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.RWidthBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.HeightBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.WidthBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TAACheckBox = new System.Windows.Forms.CheckBox();
+            this.RHeightTextBox = new System.Windows.Forms.TextBox();
+            this.xLabel = new System.Windows.Forms.Label();
+            this.RWidthTextBox = new System.Windows.Forms.TextBox();
+            this.IRLabel = new System.Windows.Forms.Label();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
+            this.xLabel2 = new System.Windows.Forms.Label();
+            this.WidthTextBox = new System.Windows.Forms.TextBox();
+            this.RLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.ServerSettingsGroupBox.SuspendLayout();
+            this.GraphicsSettingsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ClearDNS
+            // ClearDNSButton
             // 
-            this.ClearDNS.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.ClearDNS.Location = new System.Drawing.Point(420, 406);
-            this.ClearDNS.Name = "ClearDNS";
-            this.ClearDNS.Size = new System.Drawing.Size(101, 23);
-            this.ClearDNS.TabIndex = 0;
-            this.ClearDNS.Text = "清除DNS缓存";
-            this.ClearDNS.UseVisualStyleBackColor = true;
-            this.ClearDNS.Click += new System.EventHandler(this.ClearDNS_Click);
+            this.ClearDNSButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.ClearDNSButton.Location = new System.Drawing.Point(301, 431);
+            this.ClearDNSButton.Name = "ClearDNSButton";
+            this.ClearDNSButton.Size = new System.Drawing.Size(101, 23);
+            this.ClearDNSButton.TabIndex = 0;
+            this.ClearDNSButton.Text = "清除DNS缓存";
+            this.ClearDNSButton.UseVisualStyleBackColor = true;
+            this.ClearDNSButton.Click += new System.EventHandler(this.ClearDNS_Click);
             // 
-            // Delete
+            // DeleteAccountButton
             // 
-            this.Delete.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Delete.Location = new System.Drawing.Point(537, 406);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(78, 23);
-            this.Delete.TabIndex = 1;
-            this.Delete.Text = "删除账号";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.DeleteAccountButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.DeleteAccountButton.Location = new System.Drawing.Point(6, 63);
+            this.DeleteAccountButton.Name = "DeleteAccountButton";
+            this.DeleteAccountButton.Size = new System.Drawing.Size(78, 23);
+            this.DeleteAccountButton.TabIndex = 1;
+            this.DeleteAccountButton.Text = "删除账号";
+            this.DeleteAccountButton.UseVisualStyleBackColor = true;
+            this.DeleteAccountButton.Click += new System.EventHandler(this.DeleteAccountButton_Click);
             // 
-            // Web
+            // WebUIButton
             // 
-            this.Web.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Web.Location = new System.Drawing.Point(642, 406);
-            this.Web.Name = "Web";
-            this.Web.Size = new System.Drawing.Size(78, 23);
-            this.Web.TabIndex = 2;
-            this.Web.Text = "网页管理";
-            this.Web.UseVisualStyleBackColor = true;
-            this.Web.Click += new System.EventHandler(this.Web_Click);
+            this.WebUIButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.WebUIButton.Location = new System.Drawing.Point(301, 470);
+            this.WebUIButton.Name = "WebUIButton";
+            this.WebUIButton.Size = new System.Drawing.Size(78, 23);
+            this.WebUIButton.TabIndex = 2;
+            this.WebUIButton.Text = "网页管理";
+            this.WebUIButton.UseVisualStyleBackColor = true;
+            this.WebUIButton.Click += new System.EventHandler(this.WebUI_Click);
             // 
-            // Launch
+            // LaunchDivaButton
             // 
-            this.Launch.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Launch.Location = new System.Drawing.Point(749, 406);
-            this.Launch.Name = "Launch";
-            this.Launch.Size = new System.Drawing.Size(78, 23);
-            this.Launch.TabIndex = 3;
-            this.Launch.Text = "启动AFT";
-            this.Launch.UseVisualStyleBackColor = true;
-            this.Launch.Click += new System.EventHandler(this.Button4_Click);
+            this.LaunchDivaButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.LaunchDivaButton.Location = new System.Drawing.Point(385, 470);
+            this.LaunchDivaButton.Name = "LaunchDivaButton";
+            this.LaunchDivaButton.Size = new System.Drawing.Size(78, 23);
+            this.LaunchDivaButton.TabIndex = 3;
+            this.LaunchDivaButton.Text = "启动AFT";
+            this.LaunchDivaButton.UseVisualStyleBackColor = true;
+            this.LaunchDivaButton.Click += new System.EventHandler(this.LaunchDivaButton_Click);
             // 
-            // Logs
+            // LaunchPDButton
             // 
-            this.Logs.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Logs.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Logs.Location = new System.Drawing.Point(12, 12);
-            this.Logs.Multiline = true;
-            this.Logs.Name = "Logs";
-            this.Logs.ReadOnly = true;
-            this.Logs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Logs.Size = new System.Drawing.Size(341, 242);
-            this.Logs.TabIndex = 4;
+            this.LaunchPDButton.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.LaunchPDButton.Location = new System.Drawing.Point(302, 397);
+            this.LaunchPDButton.Name = "LaunchPDButton";
+            this.LaunchPDButton.Size = new System.Drawing.Size(111, 23);
+            this.LaunchPDButton.TabIndex = 5;
+            this.LaunchPDButton.Text = "启用PD-Loader";
+            this.LaunchPDButton.UseVisualStyleBackColor = true;
+            this.LaunchPDButton.Click += new System.EventHandler(this.LaunchPDButton_Click);
             // 
-            // button1
+            // FastLoaderCheckBox
             // 
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.button1.Location = new System.Drawing.Point(288, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "启用PD-Loader";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.FastLoaderCheckBox.AutoSize = true;
+            this.FastLoaderCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.FastLoaderCheckBox.Location = new System.Drawing.Point(6, 22);
+            this.FastLoaderCheckBox.Name = "FastLoaderCheckBox";
+            this.FastLoaderCheckBox.Size = new System.Drawing.Size(95, 21);
+            this.FastLoaderCheckBox.TabIndex = 6;
+            this.FastLoaderCheckBox.Text = "Fast Loader";
+            this.FastLoaderCheckBox.CheckedChanged += new System.EventHandler(this.FastLoaderCheckBox_CheckedChanged);
             // 
-            // Fast
+            // ScoreSaverCheckBox
             // 
-            this.Fast.AutoSize = true;
-            this.Fast.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Fast.ForeColor = System.Drawing.Color.Olive;
-            this.Fast.Location = new System.Drawing.Point(6, 17);
-            this.Fast.Name = "Fast";
-            this.Fast.Size = new System.Drawing.Size(147, 17);
-            this.Fast.TabIndex = 6;
-            this.Fast.Text = "Fast Loader -- Checking";
-            this.Fast.Click += new System.EventHandler(this.Fast_Click);
+            this.ScoreSaverCheckBox.AutoSize = true;
+            this.ScoreSaverCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.ScoreSaverCheckBox.Location = new System.Drawing.Point(5, 51);
+            this.ScoreSaverCheckBox.Name = "ScoreSaverCheckBox";
+            this.ScoreSaverCheckBox.Size = new System.Drawing.Size(96, 21);
+            this.ScoreSaverCheckBox.TabIndex = 7;
+            this.ScoreSaverCheckBox.Text = "Score Saver";
+            this.ScoreSaverCheckBox.CheckedChanged += new System.EventHandler(this.ScoreSaverCheckBox_CheckedChanged);
             // 
-            // Score
+            // PlayerDataManagerCheckBox
             // 
-            this.Score.AutoSize = true;
-            this.Score.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Score.ForeColor = System.Drawing.Color.Olive;
-            this.Score.Location = new System.Drawing.Point(6, 47);
-            this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(148, 17);
-            this.Score.TabIndex = 7;
-            this.Score.Text = "Score Saver -- Checking";
-            this.Score.Click += new System.EventHandler(this.Score_Click);
+            this.PlayerDataManagerCheckBox.AutoSize = true;
+            this.PlayerDataManagerCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.PlayerDataManagerCheckBox.Location = new System.Drawing.Point(5, 83);
+            this.PlayerDataManagerCheckBox.Name = "PlayerDataManagerCheckBox";
+            this.PlayerDataManagerCheckBox.Size = new System.Drawing.Size(150, 21);
+            this.PlayerDataManagerCheckBox.TabIndex = 8;
+            this.PlayerDataManagerCheckBox.Text = "Player Data Manager";
+            this.PlayerDataManagerCheckBox.Click += new System.EventHandler(this.Player_Click);
             // 
-            // Player
+            // StageManagerCheckBox
             // 
-            this.Player.AutoSize = true;
-            this.Player.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Player.ForeColor = System.Drawing.Color.Olive;
-            this.Player.Location = new System.Drawing.Point(6, 78);
-            this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(202, 17);
-            this.Player.TabIndex = 8;
-            this.Player.Text = "Player Data Manager -- Checking";
-            this.Player.Click += new System.EventHandler(this.Player_Click);
+            this.StageManagerCheckBox.AutoSize = true;
+            this.StageManagerCheckBox.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.StageManagerCheckBox.ForeColor = System.Drawing.Color.Black;
+            this.StageManagerCheckBox.Location = new System.Drawing.Point(5, 112);
+            this.StageManagerCheckBox.Name = "StageManagerCheckBox";
+            this.StageManagerCheckBox.Size = new System.Drawing.Size(117, 21);
+            this.StageManagerCheckBox.TabIndex = 9;
+            this.StageManagerCheckBox.Text = "Stage Manager";
+            this.StageManagerCheckBox.Click += new System.EventHandler(this.Stage_Click);
             // 
-            // Stage
+            // GameServerTextBox
             // 
-            this.Stage.AutoSize = true;
-            this.Stage.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.Stage.ForeColor = System.Drawing.Color.Olive;
-            this.Stage.Location = new System.Drawing.Point(6, 110);
-            this.Stage.Name = "Stage";
-            this.Stage.Size = new System.Drawing.Size(169, 17);
-            this.Stage.TabIndex = 9;
-            this.Stage.Text = "Stage Manager -- Checking";
-            this.Stage.Click += new System.EventHandler(this.Stage_Click);
-            // 
-            // GameServer
-            // 
-            this.GameServer.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.GameServer.Location = new System.Drawing.Point(88, 20);
-            this.GameServer.Name = "GameServer";
-            this.GameServer.Size = new System.Drawing.Size(313, 23);
-            this.GameServer.TabIndex = 10;
+            this.GameServerTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.GameServerTextBox.Location = new System.Drawing.Point(88, 20);
+            this.GameServerTextBox.Name = "GameServerTextBox";
+            this.GameServerTextBox.Size = new System.Drawing.Size(357, 23);
+            this.GameServerTextBox.TabIndex = 10;
             // 
             // ServerLabel
             // 
@@ -197,110 +181,110 @@
             this.ServerLabel.TabIndex = 11;
             this.ServerLabel.Text = "游戏服务器";
             // 
-            // SaveGameServer
+            // SaveGameServerButton
             // 
-            this.SaveGameServer.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.SaveGameServer.Location = new System.Drawing.Point(326, 49);
-            this.SaveGameServer.Name = "SaveGameServer";
-            this.SaveGameServer.Size = new System.Drawing.Size(75, 23);
-            this.SaveGameServer.TabIndex = 12;
-            this.SaveGameServer.Text = "保存";
-            this.SaveGameServer.UseVisualStyleBackColor = true;
-            this.SaveGameServer.Click += new System.EventHandler(this.button2_Click);
+            this.SaveGameServerButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.SaveGameServerButton.Location = new System.Drawing.Point(370, 63);
+            this.SaveGameServerButton.Name = "SaveGameServerButton";
+            this.SaveGameServerButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveGameServerButton.TabIndex = 12;
+            this.SaveGameServerButton.Text = "保存";
+            this.SaveGameServerButton.UseVisualStyleBackColor = true;
+            this.SaveGameServerButton.Click += new System.EventHandler(this.SaveGameServerButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.API);
-            this.groupBox1.Controls.Add(this.Fast);
-            this.groupBox1.Controls.Add(this.Score);
-            this.groupBox1.Controls.Add(this.Player);
-            this.groupBox1.Controls.Add(this.Stage);
+            this.groupBox1.Controls.Add(this.GraphicsAPIStatusLabel);
+            this.groupBox1.Controls.Add(this.FastLoaderCheckBox);
+            this.groupBox1.Controls.Add(this.ScoreSaverCheckBox);
+            this.groupBox1.Controls.Add(this.PlayerDataManagerCheckBox);
+            this.groupBox1.Controls.Add(this.StageManagerCheckBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.groupBox1.Location = new System.Drawing.Point(12, 260);
+            this.groupBox1.Location = new System.Drawing.Point(12, 321);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 169);
+            this.groupBox1.Size = new System.Drawing.Size(270, 172);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AFT启动前自检";
             // 
-            // API
+            // GraphicsAPIStatusLabel
             // 
-            this.API.AutoSize = true;
-            this.API.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.API.ForeColor = System.Drawing.Color.Olive;
-            this.API.Location = new System.Drawing.Point(6, 146);
-            this.API.Name = "API";
-            this.API.Size = new System.Drawing.Size(153, 17);
-            this.API.TabIndex = 10;
-            this.API.Text = "Graphics API -- Checking";
+            this.GraphicsAPIStatusLabel.AutoSize = true;
+            this.GraphicsAPIStatusLabel.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.GraphicsAPIStatusLabel.Location = new System.Drawing.Point(24, 139);
+            this.GraphicsAPIStatusLabel.Name = "GraphicsAPIStatusLabel";
+            this.GraphicsAPIStatusLabel.Size = new System.Drawing.Size(82, 17);
+            this.GraphicsAPIStatusLabel.TabIndex = 10;
+            this.GraphicsAPIStatusLabel.Text = "Graphics API";
             // 
-            // groupBox2
+            // ServerSettingsGroupBox
             // 
-            this.groupBox2.Controls.Add(this.ServerLabel);
-            this.groupBox2.Controls.Add(this.GameServer);
-            this.groupBox2.Controls.Add(this.SaveGameServer);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.groupBox2.Location = new System.Drawing.Point(371, 42);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(451, 92);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "服务器设定";
+            this.ServerSettingsGroupBox.Controls.Add(this.ServerLabel);
+            this.ServerSettingsGroupBox.Controls.Add(this.GameServerTextBox);
+            this.ServerSettingsGroupBox.Controls.Add(this.SaveGameServerButton);
+            this.ServerSettingsGroupBox.Controls.Add(this.DeleteAccountButton);
+            this.ServerSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.ServerSettingsGroupBox.Location = new System.Drawing.Point(12, 12);
+            this.ServerSettingsGroupBox.Name = "ServerSettingsGroupBox";
+            this.ServerSettingsGroupBox.Size = new System.Drawing.Size(451, 92);
+            this.ServerSettingsGroupBox.TabIndex = 14;
+            this.ServerSettingsGroupBox.TabStop = false;
+            this.ServerSettingsGroupBox.Text = "服务器设定";
             // 
-            // groupBox3
+            // GraphicsSettingsGroupBox
             // 
-            this.groupBox3.Controls.Add(this.SaveGraphics);
-            this.groupBox3.Controls.Add(this.DirectXCheck);
-            this.groupBox3.Controls.Add(this.MLAACheck);
-            this.groupBox3.Controls.Add(this.IRCheck);
-            this.groupBox3.Controls.Add(this.TAACheck);
-            this.groupBox3.Controls.Add(this.RHeightBox);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.RWidthBox);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.HeightBox);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.WidthBox);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.groupBox3.Location = new System.Drawing.Point(371, 159);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(451, 195);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "显示设定";
+            this.GraphicsSettingsGroupBox.Controls.Add(this.SaveGraphicsButton);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.DirectXCheckBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.MLAACheckBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.IRCheck);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.TAACheckBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.RHeightTextBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.xLabel);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.RWidthTextBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.IRLabel);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.HeightTextBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.xLabel2);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.WidthTextBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.RLabel);
+            this.GraphicsSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.GraphicsSettingsGroupBox.Location = new System.Drawing.Point(12, 120);
+            this.GraphicsSettingsGroupBox.Name = "GraphicsSettingsGroupBox";
+            this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 195);
+            this.GraphicsSettingsGroupBox.TabIndex = 15;
+            this.GraphicsSettingsGroupBox.TabStop = false;
+            this.GraphicsSettingsGroupBox.Text = "显示设定";
             // 
-            // SaveGraphics
+            // SaveGraphicsButton
             // 
-            this.SaveGraphics.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.SaveGraphics.Location = new System.Drawing.Point(326, 148);
-            this.SaveGraphics.Name = "SaveGraphics";
-            this.SaveGraphics.Size = new System.Drawing.Size(75, 23);
-            this.SaveGraphics.TabIndex = 13;
-            this.SaveGraphics.Text = "保存";
-            this.SaveGraphics.UseVisualStyleBackColor = true;
-            this.SaveGraphics.Click += new System.EventHandler(this.SaveGraphics_Click);
+            this.SaveGraphicsButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.SaveGraphicsButton.Location = new System.Drawing.Point(326, 148);
+            this.SaveGraphicsButton.Name = "SaveGraphicsButton";
+            this.SaveGraphicsButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveGraphicsButton.TabIndex = 13;
+            this.SaveGraphicsButton.Text = "保存";
+            this.SaveGraphicsButton.UseVisualStyleBackColor = true;
+            this.SaveGraphicsButton.Click += new System.EventHandler(this.SaveGraphics_Click);
             // 
-            // DirectXCheck
+            // DirectXCheckBox
             // 
-            this.DirectXCheck.AutoSize = true;
-            this.DirectXCheck.Location = new System.Drawing.Point(271, 101);
-            this.DirectXCheck.Name = "DirectXCheck";
-            this.DirectXCheck.Size = new System.Drawing.Size(111, 21);
-            this.DirectXCheck.TabIndex = 12;
-            this.DirectXCheck.Text = "启用DirectX 11";
-            this.DirectXCheck.UseVisualStyleBackColor = true;
+            this.DirectXCheckBox.AutoSize = true;
+            this.DirectXCheckBox.Location = new System.Drawing.Point(271, 101);
+            this.DirectXCheckBox.Name = "DirectXCheckBox";
+            this.DirectXCheckBox.Size = new System.Drawing.Size(111, 21);
+            this.DirectXCheckBox.TabIndex = 12;
+            this.DirectXCheckBox.Text = "启用DirectX 11";
+            this.DirectXCheckBox.UseVisualStyleBackColor = true;
             // 
-            // MLAACheck
+            // MLAACheckBox
             // 
-            this.MLAACheck.AutoSize = true;
-            this.MLAACheck.Location = new System.Drawing.Point(66, 101);
-            this.MLAACheck.Name = "MLAACheck";
-            this.MLAACheck.Size = new System.Drawing.Size(61, 21);
-            this.MLAACheck.TabIndex = 11;
-            this.MLAACheck.Text = "MLAA";
-            this.MLAACheck.UseVisualStyleBackColor = true;
-            this.MLAACheck.CheckedChanged += new System.EventHandler(this.MLAACheck_CheckedChanged);
+            this.MLAACheckBox.AutoSize = true;
+            this.MLAACheckBox.Location = new System.Drawing.Point(66, 101);
+            this.MLAACheckBox.Name = "MLAACheckBox";
+            this.MLAACheckBox.Size = new System.Drawing.Size(61, 21);
+            this.MLAACheckBox.TabIndex = 11;
+            this.MLAACheckBox.Text = "MLAA";
+            this.MLAACheckBox.UseVisualStyleBackColor = true;
+            this.MLAACheckBox.CheckedChanged += new System.EventHandler(this.MLAACheck_CheckedChanged);
             // 
             // IRCheck
             // 
@@ -312,142 +296,137 @@
             this.IRCheck.Text = "启用内部渲染分辨率";
             this.IRCheck.UseVisualStyleBackColor = true;
             // 
-            // TAACheck
+            // TAACheckBox
             // 
-            this.TAACheck.AutoSize = true;
-            this.TAACheck.Location = new System.Drawing.Point(10, 101);
-            this.TAACheck.Name = "TAACheck";
-            this.TAACheck.Size = new System.Drawing.Size(50, 21);
-            this.TAACheck.TabIndex = 9;
-            this.TAACheck.Text = "TAA";
-            this.TAACheck.UseVisualStyleBackColor = true;
-            this.TAACheck.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.TAACheckBox.AutoSize = true;
+            this.TAACheckBox.Location = new System.Drawing.Point(10, 101);
+            this.TAACheckBox.Name = "TAACheckBox";
+            this.TAACheckBox.Size = new System.Drawing.Size(50, 21);
+            this.TAACheckBox.TabIndex = 9;
+            this.TAACheckBox.Text = "TAA";
+            this.TAACheckBox.UseVisualStyleBackColor = true;
+            this.TAACheckBox.CheckedChanged += new System.EventHandler(this.TAACheckBox_CheckedChanged);
             // 
-            // RHeightBox
+            // RHeightTextBox
             // 
-            this.RHeightBox.Location = new System.Drawing.Point(258, 55);
-            this.RHeightBox.Name = "RHeightBox";
-            this.RHeightBox.Size = new System.Drawing.Size(91, 23);
-            this.RHeightBox.TabIndex = 7;
+            this.RHeightTextBox.Location = new System.Drawing.Point(258, 55);
+            this.RHeightTextBox.Name = "RHeightTextBox";
+            this.RHeightTextBox.Size = new System.Drawing.Size(91, 23);
+            this.RHeightTextBox.TabIndex = 7;
             // 
-            // label3
+            // xLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "X";
+            this.xLabel.AutoSize = true;
+            this.xLabel.Location = new System.Drawing.Point(236, 58);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(16, 17);
+            this.xLabel.TabIndex = 6;
+            this.xLabel.Text = "X";
             // 
-            // RWidthBox
+            // RWidthTextBox
             // 
-            this.RWidthBox.Location = new System.Drawing.Point(139, 55);
-            this.RWidthBox.Name = "RWidthBox";
-            this.RWidthBox.Size = new System.Drawing.Size(91, 23);
-            this.RWidthBox.TabIndex = 5;
+            this.RWidthTextBox.Location = new System.Drawing.Point(139, 55);
+            this.RWidthTextBox.Name = "RWidthTextBox";
+            this.RWidthTextBox.Size = new System.Drawing.Size(91, 23);
+            this.RWidthTextBox.TabIndex = 5;
             // 
-            // label4
+            // IRLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "内部渲染分辨率";
+            this.IRLabel.AutoSize = true;
+            this.IRLabel.Location = new System.Drawing.Point(6, 61);
+            this.IRLabel.Name = "IRLabel";
+            this.IRLabel.Size = new System.Drawing.Size(92, 17);
+            this.IRLabel.TabIndex = 4;
+            this.IRLabel.Text = "内部渲染分辨率";
             // 
-            // HeightBox
+            // HeightTextBox
             // 
-            this.HeightBox.Location = new System.Drawing.Point(258, 24);
-            this.HeightBox.Name = "HeightBox";
-            this.HeightBox.Size = new System.Drawing.Size(91, 23);
-            this.HeightBox.TabIndex = 3;
+            this.HeightTextBox.Location = new System.Drawing.Point(258, 24);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.Size = new System.Drawing.Size(91, 23);
+            this.HeightTextBox.TabIndex = 3;
             // 
-            // label2
+            // xLabel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(236, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "X";
+            this.xLabel2.AutoSize = true;
+            this.xLabel2.Location = new System.Drawing.Point(236, 27);
+            this.xLabel2.Name = "xLabel2";
+            this.xLabel2.Size = new System.Drawing.Size(16, 17);
+            this.xLabel2.TabIndex = 2;
+            this.xLabel2.Text = "X";
             // 
-            // WidthBox
+            // WidthTextBox
             // 
-            this.WidthBox.Location = new System.Drawing.Point(139, 24);
-            this.WidthBox.Name = "WidthBox";
-            this.WidthBox.Size = new System.Drawing.Size(91, 23);
-            this.WidthBox.TabIndex = 1;
+            this.WidthTextBox.Location = new System.Drawing.Point(139, 24);
+            this.WidthTextBox.Name = "WidthTextBox";
+            this.WidthTextBox.Size = new System.Drawing.Size(91, 23);
+            this.WidthTextBox.TabIndex = 1;
             // 
-            // label1
+            // RLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "游戏分辨率";
+            this.RLabel.AutoSize = true;
+            this.RLabel.Location = new System.Drawing.Point(6, 30);
+            this.RLabel.Name = "RLabel";
+            this.RLabel.Size = new System.Drawing.Size(68, 17);
+            this.RLabel.TabIndex = 0;
+            this.RLabel.Text = "游戏分辨率";
             // 
             // ToolBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 441);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(481, 508);
+            this.Controls.Add(this.GraphicsSettingsGroupBox);
+            this.Controls.Add(this.ServerSettingsGroupBox);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Logs);
-            this.Controls.Add(this.Launch);
-            this.Controls.Add(this.Web);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.ClearDNS);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.LaunchPDButton);
+            this.Controls.Add(this.LaunchDivaButton);
+            this.Controls.Add(this.WebUIButton);
+            this.Controls.Add(this.ClearDNSButton);
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.ServerSettingsGroupBox.ResumeLayout(false);
+            this.ServerSettingsGroupBox.PerformLayout();
+            this.GraphicsSettingsGroupBox.ResumeLayout(false);
+            this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Button ClearDNS;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Web;
-        private System.Windows.Forms.Button Launch;
-        private System.Windows.Forms.TextBox Logs;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Fast;
-        private System.Windows.Forms.Label Score;
-        private System.Windows.Forms.Label Player;
-        private System.Windows.Forms.Label Stage;
-        private System.Windows.Forms.TextBox GameServer;
+        private System.Windows.Forms.Button ClearDNSButton;
+        private System.Windows.Forms.Button DeleteAccountButton;
+        private System.Windows.Forms.Button WebUIButton;
+        private System.Windows.Forms.Button LaunchDivaButton;
+        private System.Windows.Forms.Button LaunchPDButton;
+        private System.Windows.Forms.CheckBox FastLoaderCheckBox;
+        private System.Windows.Forms.CheckBox ScoreSaverCheckBox;
+        private System.Windows.Forms.CheckBox PlayerDataManagerCheckBox;
+        private System.Windows.Forms.CheckBox StageManagerCheckBox;
+        private System.Windows.Forms.TextBox GameServerTextBox;
         private System.Windows.Forms.Label ServerLabel;
-        private System.Windows.Forms.Button SaveGameServer;
+        private System.Windows.Forms.Button SaveGameServerButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox HeightBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox WidthBox;
-        private System.Windows.Forms.CheckBox TAACheck;
-        private System.Windows.Forms.TextBox RHeightBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox RWidthBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox MLAACheck;
+        private System.Windows.Forms.GroupBox ServerSettingsGroupBox;
+        private System.Windows.Forms.GroupBox GraphicsSettingsGroupBox;
+        private System.Windows.Forms.Label RLabel;
+        private System.Windows.Forms.TextBox HeightTextBox;
+        private System.Windows.Forms.Label xLabel2;
+        private System.Windows.Forms.TextBox WidthTextBox;
+        private System.Windows.Forms.CheckBox TAACheckBox;
+        private System.Windows.Forms.TextBox RHeightTextBox;
+        private System.Windows.Forms.Label xLabel;
+        private System.Windows.Forms.TextBox RWidthTextBox;
+        private System.Windows.Forms.Label IRLabel;
+        private System.Windows.Forms.CheckBox MLAACheckBox;
         private System.Windows.Forms.CheckBox IRCheck;
-        private System.Windows.Forms.Label API;
-        private System.Windows.Forms.CheckBox DirectXCheck;
-        private System.Windows.Forms.Button SaveGraphics;
+        private System.Windows.Forms.Label GraphicsAPIStatusLabel;
+        private System.Windows.Forms.CheckBox DirectXCheckBox;
+        private System.Windows.Forms.Button SaveGraphicsButton;
+        
+        #endregion
     }
 }
 
