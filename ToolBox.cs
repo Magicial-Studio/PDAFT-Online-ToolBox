@@ -105,7 +105,7 @@ namespace PDAFT_Online_ToolBox
                     var testedSubnet = new IPAddress(bytes).ToString();
 
                     if (!subnet.Equals(testedSubnet))
-                        SubnetTextBox.Text = testedSubnet;
+                        BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
                 }
             });
         }
@@ -122,16 +122,18 @@ namespace PDAFT_Online_ToolBox
 
         private void LaunchDivaButton_Click(object sender, EventArgs e)
         {
-            if ((ScoreSaverCheckBox.Checked) || (StageManagerCheckBox.Checked == true) || (PlayerDataManagerCheckBox.Checked == true))
+            if (ScoreSaverCheckBox.Checked || StageManagerCheckBox.Checked || PlayerDataManagerCheckBox.Checked)
             {
-                string WarningMessage = "PDAFT Launcher模块检测到";
-                if (ScoreSaverCheckBox.Checked == true) WarningMessage = WarningMessage + "Score Saver/";
-                if (StageManagerCheckBox.Checked == true) WarningMessage = WarningMessage + "Stage Manager/";
-                if (PlayerDataManagerCheckBox.Checked == true) WarningMessage = WarningMessage + "Player Data Manager/";
-                WarningMessage = WarningMessage.Remove(WarningMessage.Length - 1, 1);
-                WarningMessage = WarningMessage + "已被启用,这些功能可能会与SegaTools联网功能产生冲突，是否继续启动？";
-                if (MessageBox.Show(WarningMessage, "警告", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) != DialogResult.Yes) return;
+                var str = "PDAFT Launcher 模块检测到";
+                if (ScoreSaverCheckBox.Checked) str += "Score Saver/";
+                if (StageManagerCheckBox.Checked) str += "Stage Manager/";
+                if (PlayerDataManagerCheckBox.Checked) str += "Player Data Manager/";
+                str = str.Remove(str.Length - 1, 1);
+                str += " 已被启用,这些功能可能会与 SegaTools 联网功能产生冲突，是否继续启动？";
+                if (MessageBox.Show(str, "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) !=
+                    DialogResult.Yes) return;
             }
+
             foreach (var process in Process.GetProcessesByName("diva"))
             {
                 try
@@ -191,7 +193,7 @@ namespace PDAFT_Online_ToolBox
         private void FastLoaderCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             _components["components"]["fast_loader"] = FastLoaderCheckBox.Checked.ToString().ToLowerInvariant();
-            if (FastLoaderCheckBox.Checked==true) _components["components"]["fast_loader_speed"] = "4";
+            if (FastLoaderCheckBox.Checked) _components["components"]["fast_loader_speed"] = "4";
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
@@ -236,7 +238,5 @@ namespace PDAFT_Online_ToolBox
             _iniParser.WriteFile("plugins\\config.ini", _config);
             _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
         }
-
-       
     }
 }

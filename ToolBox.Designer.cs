@@ -207,7 +207,7 @@
             this.groupBox1.Size = new System.Drawing.Size(270, 172);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TLAC设定";
+            this.groupBox1.Text = "TLAC 设定";
             // 
             // GraphicsAPIStatusLabel
             // 
