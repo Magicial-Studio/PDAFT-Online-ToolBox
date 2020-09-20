@@ -207,7 +207,7 @@
             this.groupBox1.Size = new System.Drawing.Size(270, 172);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "AFT启动前自检";
+            this.groupBox1.Text = "TLAC设定";
             // 
             // GraphicsAPIStatusLabel
             // 
@@ -404,7 +404,7 @@
             this.Controls.Add(this.WebUIButton);
             this.Controls.Add(this.ClearDNSButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
@@ -415,6 +415,7 @@
             this.GraphicsSettingsGroupBox.ResumeLayout(false);
             this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Label SubnetLabel;

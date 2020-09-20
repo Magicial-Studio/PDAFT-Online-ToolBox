@@ -75,7 +75,6 @@ namespace PDAFT_Online_ToolBox
             UpdateGraphicsAPIStatusLabel();
 
             IRCheck.Checked = _config["Resolution"]["r.Enable"] == "1";
-            IRCheck_CheckedChanged(null, null);
 
             // var Speed = int.Parse(_components["components"]["fast_loader_speed"]);
 
@@ -123,6 +122,16 @@ namespace PDAFT_Online_ToolBox
 
         private void LaunchDivaButton_Click(object sender, EventArgs e)
         {
+            if ((ScoreSaverCheckBox.Checked) || (StageManagerCheckBox.Checked == true) || (PlayerDataManagerCheckBox.Checked == true))
+            {
+                string WarningMessage = "PDAFT Launcher模块检测到";
+                if (ScoreSaverCheckBox.Checked == true) WarningMessage = WarningMessage + "Score Saver/";
+                if (StageManagerCheckBox.Checked == true) WarningMessage = WarningMessage + "Stage Manager/";
+                if (PlayerDataManagerCheckBox.Checked == true) WarningMessage = WarningMessage + "Player Data Manager/";
+                WarningMessage = WarningMessage.Remove(WarningMessage.Length - 1, 1);
+                WarningMessage = WarningMessage + "已被启用,这些功能可能会与SegaTools联网功能产生冲突，是否继续启动？";
+                if (MessageBox.Show(WarningMessage, "警告", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) != DialogResult.Yes) return;
+            }
             foreach (var process in Process.GetProcessesByName("diva"))
             {
                 try
@@ -182,7 +191,7 @@ namespace PDAFT_Online_ToolBox
         private void FastLoaderCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             _components["components"]["fast_loader"] = FastLoaderCheckBox.Checked.ToString().ToLowerInvariant();
-            // _components["components"]["fast_loader_speed"] = "4";
+            if (FastLoaderCheckBox.Checked==true) _components["components"]["fast_loader_speed"] = "4";
             _iniParser.WriteFile("plugins\\components.ini", _components);
         }
 
@@ -222,14 +231,12 @@ namespace PDAFT_Online_ToolBox
             _config["Resolution"]["r.Enable"] = (IRCheck.Checked ? 1 : 0).ToString();
             _config["Resolution"]["r.Height"] = RHeightTextBox.Text;
             _config["Resolution"]["r.Width"] = RWidthTextBox.Text;
+            RHeightTextBox.Enabled = RWidthTextBox.Enabled = IRCheck.Checked;
 
             _iniParser.WriteFile("plugins\\config.ini", _config);
             _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
         }
 
-        private void IRCheck_CheckedChanged(object sender, EventArgs e)
-        {
-            RHeightTextBox.Enabled = RWidthTextBox.Enabled = IRCheck.Checked;
-        }
+       
     }
 }
