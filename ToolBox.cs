@@ -98,15 +98,21 @@ namespace PDAFT_Online_ToolBox
 
             await Task.Run(() =>
             {
-                if (NativeMethods.GetBestRoute(BitConverter.ToUInt32(IPAddress.Parse("114.114.114.114").GetAddressBytes(), 0), 0, out var pRoute) == 0)
+                byte[] bytes;
+                try
                 {
-                    var bytes = new IPAddress(pRoute.dwForwardNextHop).GetAddressBytes();
-                    bytes[3] = 0;
-                    var testedSubnet = new IPAddress(bytes).ToString();
-
-                    if (!subnet.Equals(testedSubnet))
-                        BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
+                    bytes = Utils.BestLocalEndPoint(new IPEndPoint(0x72727272, 53)).Address.GetAddressBytes();
                 }
+                catch
+                {
+                    bytes = new byte[] {192, 168, 0, 0};
+                }
+
+                bytes[3] = 0;
+                var testedSubnet = new IPAddress(bytes).ToString();
+
+                if (!subnet.Equals(testedSubnet))
+                    BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
             });
         }
 
