@@ -1,7 +1,9 @@
-version: 3.1.{build}
+version: 3.1.unstable.{build}
+skip_tags: true
 configuration: Release
 platform: Any CPU
 before_build:
 - cmd: nuget restore
 build:
+  project: AFT_Online_Tool_Box.sln
   verbosity: minimal
