@@ -8,4 +8,4 @@ build:
   project: AFT_Online_Tool_Box.sln
   verbosity: minimal
 artifacts:
-- path: bin\Release\PDAFT_Online_ToolBox.exe
+- path: PDAFT_Online_ToolBox.exe
