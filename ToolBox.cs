@@ -95,6 +95,7 @@ namespace PDAFT_Online_ToolBox
 
             var subnet = _segatools["keychip"]["subnet"];
             SubnetTextBox.Text = subnet;
+            CheckForUpdates(true);
 
             await Task.Run(() =>
             {
@@ -223,6 +224,7 @@ namespace PDAFT_Online_ToolBox
 
         private void SaveGameServerButton_Click(object sender, EventArgs e)
         {
+            
             _segatools["dns"]["default"] = GameServerTextBox.Text;
             _segatools["keychip"]["subnet"] = SubnetTextBox.Text;
             _segatoolsIniParser.WriteFile("segatools.ini", _segatools);
@@ -244,5 +246,65 @@ namespace PDAFT_Online_ToolBox
             _iniParser.WriteFile("plugins\\config.ini", _config);
             _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
         }
+         private void CheckForUpdates( bool notifyOnFail )
+        {
+
+            try
+            {
+                using ( var client = new WebClient() )
+                {
+                    client.Headers.Add( "user-agent", Program.Name );
+                    string response = client.DownloadString("https://api.github.com/repos/Magicial-Studio/PDAFT-Online-Toolbox/releases/latest");
+
+                    // yes this is pure crackheadery
+                    // no I won't use a json library
+
+                    int index = response.IndexOf( "tag_name", StringComparison.OrdinalIgnoreCase );
+
+                    int firstIndex = response.IndexOf( ':', index + 8 );
+                    int lastIndex = response.IndexOf( ',', firstIndex + 1 );
+
+                    string tagName = Program.FixUpVersionString( response.Substring( firstIndex + 1, lastIndex - firstIndex - 1 ).Trim( '"', ',', 'v', ' ' ) );
+
+                    if ( tagName != Program.Version )
+                    {
+                        CheckForUpdateLabel.Text = "需要更新 最新版本： " + tagName;
+                        Invoke( new Action( () =>
+                        {
+                            if ( MessageBox.Show( "PDAFT_Online_Toolbox有一个新的更新，需要打开release页面去下载它吗？", Program.Name+" Update", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question ) != DialogResult.Yes )
+                                return;
+
+                            Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
+                        } ) );
+                    }
+
+                    else if ( notifyOnFail )
+                    {
+                        Invoke( new Action( () =>
+                        {
+                            CheckForUpdateLabel.Text = "已为最新:Version " + tagName;
+                            CheckForUpdateLabel.Enabled = false;
+                        } ) );
+                    }
+                }
+            }
+
+            catch
+            {
+                if ( !notifyOnFail )
+                    return;
+
+                Invoke( new Action( () =>
+                {
+                    MessageBox.Show( "PDAFT_Online_Toolbox检查更新失败", Program.Name, MessageBoxButtons.OK, MessageBoxIcon.Error );
+                } ) );
+            }
+        }
+
+         private void CheckForUpdateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+         {
+             Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
+         }
     }
 }

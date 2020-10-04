@@ -60,6 +60,7 @@
             this.xLabel2 = new System.Windows.Forms.Label();
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.RLabel = new System.Windows.Forms.Label();
+            this.CheckForUpdateLabel = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.ServerSettingsGroupBox.SuspendLayout();
             this.GraphicsSettingsGroupBox.SuspendLayout();
@@ -68,7 +69,7 @@
             // ClearDNSButton
             // 
             this.ClearDNSButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.ClearDNSButton.Location = new System.Drawing.Point(301, 440);
+            this.ClearDNSButton.Location = new System.Drawing.Point(299, 402);
             this.ClearDNSButton.Name = "ClearDNSButton";
             this.ClearDNSButton.Size = new System.Drawing.Size(101, 23);
             this.ClearDNSButton.TabIndex = 0;
@@ -90,7 +91,7 @@
             // WebUIButton
             // 
             this.WebUIButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.WebUIButton.Location = new System.Drawing.Point(301, 469);
+            this.WebUIButton.Location = new System.Drawing.Point(299, 431);
             this.WebUIButton.Name = "WebUIButton";
             this.WebUIButton.Size = new System.Drawing.Size(78, 23);
             this.WebUIButton.TabIndex = 2;
@@ -101,7 +102,7 @@
             // LaunchDivaButton
             // 
             this.LaunchDivaButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.LaunchDivaButton.Location = new System.Drawing.Point(301, 498);
+            this.LaunchDivaButton.Location = new System.Drawing.Point(299, 460);
             this.LaunchDivaButton.Name = "LaunchDivaButton";
             this.LaunchDivaButton.Size = new System.Drawing.Size(78, 23);
             this.LaunchDivaButton.TabIndex = 3;
@@ -112,7 +113,7 @@
             // UsePDLoaderButton
             // 
             this.UsePDLoaderButton.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.UsePDLoaderButton.Location = new System.Drawing.Point(301, 411);
+            this.UsePDLoaderButton.Location = new System.Drawing.Point(299, 373);
             this.UsePDLoaderButton.Name = "UsePDLoaderButton";
             this.UsePDLoaderButton.Size = new System.Drawing.Size(111, 23);
             this.UsePDLoaderButton.TabIndex = 5;
@@ -391,11 +392,23 @@
             this.RLabel.TabIndex = 0;
             this.RLabel.Text = "游戏分辨率";
             // 
+            // CheckForUpdateLabel
+            // 
+            this.CheckForUpdateLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (134)));
+            this.CheckForUpdateLabel.Location = new System.Drawing.Point(299, 486);
+            this.CheckForUpdateLabel.Name = "CheckForUpdateLabel";
+            this.CheckForUpdateLabel.Size = new System.Drawing.Size(181, 22);
+            this.CheckForUpdateLabel.TabIndex = 16;
+            this.CheckForUpdateLabel.TabStop = true;
+            this.CheckForUpdateLabel.Text = "检测更新";
+            this.CheckForUpdateLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CheckForUpdateLabel_LinkClicked);
+            // 
             // ToolBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 542);
+            this.Controls.Add(this.CheckForUpdateLabel);
             this.Controls.Add(this.GraphicsSettingsGroupBox);
             this.Controls.Add(this.ServerSettingsGroupBox);
             this.Controls.Add(this.groupBox1);
@@ -404,7 +417,7 @@
             this.Controls.Add(this.WebUIButton);
             this.Controls.Add(this.ClearDNSButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
@@ -415,8 +428,9 @@
             this.GraphicsSettingsGroupBox.ResumeLayout(false);
             this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.LinkLabel CheckForUpdateLabel;
 
         private System.Windows.Forms.Label SubnetLabel;
         private System.Windows.Forms.TextBox SubnetTextBox;
