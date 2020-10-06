@@ -13,6 +13,7 @@
   <Platforms>AnyCPU</Platforms>
   <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   <LangVersion>latest</LangVersion>
+  <Authors>Magicial Studio</Authors>
 </PropertyGroup>
 
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -11,8 +11,17 @@ namespace PDAFT_Online_ToolBox
         /// </summary>
         private static string sVersion;
         public static string Name => "PDAFT Online Toolbox";
-        public static string Version = "3.1";
+        public static bool UpdateCheckedSucceed = false;
+        public static string Version
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(sVersion))
+                    return sVersion;
 
+                return sVersion = FixUpVersionString(Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            }
+        }
         public static string FixUpVersionString( string version )
         {
             while ( version.EndsWith( ".0" ) )

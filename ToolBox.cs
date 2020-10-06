@@ -9,6 +9,7 @@ using IniParser.Model;
 
 namespace PDAFT_Online_ToolBox
 {
+    
     public partial class ToolBox : Form
     {
         public ToolBox()
@@ -95,7 +96,8 @@ namespace PDAFT_Online_ToolBox
 
             var subnet = _segatools["keychip"]["subnet"];
             SubnetTextBox.Text = subnet;
-            CheckForUpdates(true);
+            await Task.Run(() => CheckForUpdates(true));
+            //CheckForUpdates((true));
 
             await Task.Run(() =>
             {
@@ -269,23 +271,15 @@ namespace PDAFT_Online_ToolBox
                     if ( tagName != Program.Version )
                     {
                         CheckForUpdateLabel.Text = "需要更新 最新版本： " + tagName;
-                        Invoke( new Action( () =>
-                        {
-                            if ( MessageBox.Show( "PDAFT_Online_Toolbox有一个新的更新，需要打开release页面去下载它吗？", Program.Name+" Update", MessageBoxButtons.YesNo,
-                                MessageBoxIcon.Question ) != DialogResult.Yes )
-                                return;
-
-                            Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
-                        } ) );
+                        Program.UpdateCheckedSucceed = true;
                     }
 
                     else if ( notifyOnFail )
                     {
-                        Invoke( new Action( () =>
-                        {
+                        
                             CheckForUpdateLabel.Text = "已为最新:Version " + tagName;
                             CheckForUpdateLabel.Enabled = false;
-                        } ) );
+                            Program.UpdateCheckedSucceed = true;
                     }
                 }
             }
@@ -294,17 +288,15 @@ namespace PDAFT_Online_ToolBox
             {
                 if ( !notifyOnFail )
                     return;
-
-                Invoke( new Action( () =>
-                {
-                    MessageBox.Show( "PDAFT_Online_Toolbox检查更新失败", Program.Name, MessageBoxButtons.OK, MessageBoxIcon.Error );
-                } ) );
+                CheckForUpdateLabel.Text = "更新检查失败";
             }
         }
 
          private void CheckForUpdateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
          {
-             Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
+             if (Program.UpdateCheckedSucceed) Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
+             else CheckForUpdates(true);
+             
          }
     }
 }
