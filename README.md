@@ -27,4 +27,5 @@ GPL 3.0
 ## 使用软件
 
 Rider By <a href="https://www.jetbrains.com/?from=PDAFT-Online-ToolBox"><img src="jetbrains-variant-4.svg" alt="JetBrains" width="200"/></a>
+
 Visual Studio
