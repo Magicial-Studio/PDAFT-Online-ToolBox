@@ -24,5 +24,7 @@ PDAFT-Online-Toolbox是一个基于C#开发的PDAFT工具箱程序
 ## 分发协议
 GPL 3.0
 
-Supported by <a href="https://www.jetbrains.com/?from=PDAFT-Online-ToolBox"><img src=".github/jetbrains-variant-4.svg" alt="JetBrains" width="200"/></a>
+## 使用软件
 
+Rider By <a href="https://www.jetbrains.com/?from=PDAFT-Online-ToolBox"><img src="jetbrains-variant-4.svg" alt="JetBrains" width="200"/></a>
+Visual Studio
