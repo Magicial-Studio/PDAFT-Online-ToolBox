@@ -9,4 +9,4 @@ build:
   verbosity: minimal
 artifacts:
 - path: bin\Release\PDAFT_Online_ToolBox.exe
-  name: PDAFT-Online-Toolbox
+  name: PDAFT-Online-Toolbox.exe
