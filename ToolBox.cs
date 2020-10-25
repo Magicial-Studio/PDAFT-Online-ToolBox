@@ -9,7 +9,6 @@ using IniParser.Model;
 
 namespace PDAFT_Online_ToolBox
 {
-    
     public partial class ToolBox : Form
     {
         public ToolBox()
@@ -93,19 +92,8 @@ namespace PDAFT_Online_ToolBox
             UsePDLoaderButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
 
             GameServerTextBox.Text = _segatools["dns"]["default"];
-            
-            switch (_config["Resolution"]["Display"])
-            {
-                case "0" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("窗口化"); 
-                    break;
-                case "1" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("无边窗口化");
-                    break;
-                case "2" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("独占全屏");
-                    break;
-                case "3" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("安全模式");
-                    break;
-                        
-            }
+
+            DisplayModeComboBox.SelectedIndex = int.TryParse(_config["Resolution"]["Display"], out var display) ? display : 0;
 
             var subnet = _segatools["keychip"]["subnet"];
             SubnetTextBox.Text = subnet;
@@ -114,23 +102,20 @@ namespace PDAFT_Online_ToolBox
 
             await Task.Run(() =>
             {
-                byte[] bytes;
                 try
                 {
-                    bytes = Utils.BestLocalEndPoint(new IPEndPoint(0x72727272, 53)).Address.GetAddressBytes();
+                    var bytes = Utils.BestLocalEndPoint(new IPEndPoint(0x72727272, 53)).Address.GetAddressBytes();
+                    bytes[3] = 0;
+                    var testedSubnet = new IPAddress(bytes).ToString();
+
+                    if (!subnet.Equals(testedSubnet))
+                        BeginInvoke(new Action(() => SubnetTextBox.Text = testedSubnet));
                 }
                 catch
                 {
-                    bytes = new byte[] {192, 168, 0, 0};
+                    BeginInvoke(new Action(() => SubnetTextBox.Text = "192.168.0.0"));
                 }
-
-                bytes[3] = 0;
-                var testedSubnet = new IPAddress(bytes).ToString();
-
-                if (!subnet.Equals(testedSubnet))
-                    BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
             });
-            
         }
 
         private void UpdateGraphicsAPIStatusLabel()
@@ -240,7 +225,6 @@ namespace PDAFT_Online_ToolBox
 
         private void SaveGameServerButton_Click(object sender, EventArgs e)
         {
-            
             _segatools["dns"]["default"] = GameServerTextBox.Text;
             _segatools["keychip"]["subnet"] = SubnetTextBox.Text;
             _segatoolsIniParser.WriteFile("segatools.ini", _segatools);
@@ -258,22 +242,12 @@ namespace PDAFT_Online_ToolBox
             _config["Resolution"]["r.Height"] = RHeightTextBox.Text;
             _config["Resolution"]["r.Width"] = RWidthTextBox.Text;
             RHeightTextBox.Enabled = RWidthTextBox.Enabled = IRCheck.Checked;
-            switch (DisplayModeComboBox.SelectedItem.ToString())
-            {
-                case "窗口化" : _config["Resolution"]["Display"]="0"; 
-                    break;
-                case "无边窗口化" : _config["Resolution"]["Display"]="1"; 
-                    break;
-                case "独占全屏" : _config["Resolution"]["Display"]="2";
-                    break;
-                case "安全模式" : _config["Resolution"]["Display"]="3";
-                    break;
-                        
-            }
+            _config["Resolution"]["Display"] = DisplayModeComboBox.SelectedIndex.ToString();
 
             _iniParser.WriteFile("plugins\\config.ini", _config);
             _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
         }
+
         private void CheckForUpdates(bool notifyOnFail)
         {
             if (Program.UnstableVersion)
@@ -308,7 +282,6 @@ namespace PDAFT_Online_ToolBox
 
                         else if (notifyOnFail)
                         {
-
                             CheckForUpdateLabel.Text = "已为最新:Version " + tagName;
                             CheckForUpdateLabel.Enabled = false;
                             Program.UpdateCheckedSucceed = true;
@@ -325,11 +298,10 @@ namespace PDAFT_Online_ToolBox
             }
         }
 
-         private void CheckForUpdateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-         {
-             if (Program.UpdateCheckedSucceed) Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
-             else CheckForUpdates(true);
-             
-         }
+        private void CheckForUpdateLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (Program.UpdateCheckedSucceed) Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
+            else CheckForUpdates(true);
+        }
     }
 }
