@@ -93,6 +93,19 @@ namespace PDAFT_Online_ToolBox
             UsePDLoaderButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
 
             GameServerTextBox.Text = _segatools["dns"]["default"];
+            
+            switch (_config["Resolution"]["Display"])
+            {
+                case "0" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("窗口化"); 
+                    break;
+                case "1" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("无边窗口化");
+                    break;
+                case "2" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("独占全屏");
+                    break;
+                case "3" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("安全模式");
+                    break;
+                        
+            }
 
             var subnet = _segatools["keychip"]["subnet"];
             SubnetTextBox.Text = subnet;
@@ -117,18 +130,7 @@ namespace PDAFT_Online_ToolBox
                 if (!subnet.Equals(testedSubnet))
                     BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
             });
-            switch (_config["Resolution"]["Display"])
-            {
-                case "0" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("窗口化"); 
-                    break;
-                case "1" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("无边窗口化");
-                    break;
-                case "2" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("独占全屏");
-                    break;
-                case "3" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("安全模式");
-                    break;
-                        
-            }
+            
         }
 
         private void UpdateGraphicsAPIStatusLabel()
