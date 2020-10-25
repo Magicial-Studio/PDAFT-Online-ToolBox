@@ -47,6 +47,7 @@
             this.SubnetLabel = new System.Windows.Forms.Label();
             this.SubnetTextBox = new System.Windows.Forms.TextBox();
             this.GraphicsSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DisplayLabel = new System.Windows.Forms.Label();
             this.SaveGraphicsButton = new System.Windows.Forms.Button();
             this.DirectXCheckBox = new System.Windows.Forms.CheckBox();
             this.MLAACheckBox = new System.Windows.Forms.CheckBox();
@@ -61,6 +62,7 @@
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.RLabel = new System.Windows.Forms.Label();
             this.CheckForUpdateLabel = new System.Windows.Forms.LinkLabel();
+            this.DisplayModeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.ServerSettingsGroupBox.SuspendLayout();
             this.GraphicsSettingsGroupBox.SuspendLayout();
@@ -256,6 +258,8 @@
             // 
             // GraphicsSettingsGroupBox
             // 
+            this.GraphicsSettingsGroupBox.Controls.Add(this.DisplayModeComboBox);
+            this.GraphicsSettingsGroupBox.Controls.Add(this.DisplayLabel);
             this.GraphicsSettingsGroupBox.Controls.Add(this.SaveGraphicsButton);
             this.GraphicsSettingsGroupBox.Controls.Add(this.DirectXCheckBox);
             this.GraphicsSettingsGroupBox.Controls.Add(this.MLAACheckBox);
@@ -272,15 +276,23 @@
             this.GraphicsSettingsGroupBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.GraphicsSettingsGroupBox.Location = new System.Drawing.Point(12, 170);
             this.GraphicsSettingsGroupBox.Name = "GraphicsSettingsGroupBox";
-            this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 159);
+            this.GraphicsSettingsGroupBox.Size = new System.Drawing.Size(451, 173);
             this.GraphicsSettingsGroupBox.TabIndex = 15;
             this.GraphicsSettingsGroupBox.TabStop = false;
             this.GraphicsSettingsGroupBox.Text = "显示设定";
             // 
+            // DisplayLabel
+            // 
+            this.DisplayLabel.Location = new System.Drawing.Point(6, 85);
+            this.DisplayLabel.Name = "DisplayLabel";
+            this.DisplayLabel.Size = new System.Drawing.Size(87, 23);
+            this.DisplayLabel.TabIndex = 14;
+            this.DisplayLabel.Text = "窗口显示模式";
+            // 
             // SaveGraphicsButton
             // 
             this.SaveGraphicsButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
-            this.SaveGraphicsButton.Location = new System.Drawing.Point(370, 128);
+            this.SaveGraphicsButton.Location = new System.Drawing.Point(370, 144);
             this.SaveGraphicsButton.Name = "SaveGraphicsButton";
             this.SaveGraphicsButton.Size = new System.Drawing.Size(75, 23);
             this.SaveGraphicsButton.TabIndex = 13;
@@ -291,7 +303,7 @@
             // DirectXCheckBox
             // 
             this.DirectXCheckBox.AutoSize = true;
-            this.DirectXCheckBox.Location = new System.Drawing.Point(271, 101);
+            this.DirectXCheckBox.Location = new System.Drawing.Point(271, 117);
             this.DirectXCheckBox.Name = "DirectXCheckBox";
             this.DirectXCheckBox.Size = new System.Drawing.Size(111, 21);
             this.DirectXCheckBox.TabIndex = 12;
@@ -301,7 +313,7 @@
             // MLAACheckBox
             // 
             this.MLAACheckBox.AutoSize = true;
-            this.MLAACheckBox.Location = new System.Drawing.Point(66, 101);
+            this.MLAACheckBox.Location = new System.Drawing.Point(66, 117);
             this.MLAACheckBox.Name = "MLAACheckBox";
             this.MLAACheckBox.Size = new System.Drawing.Size(61, 21);
             this.MLAACheckBox.TabIndex = 11;
@@ -311,7 +323,7 @@
             // IRCheck
             // 
             this.IRCheck.AutoSize = true;
-            this.IRCheck.Location = new System.Drawing.Point(133, 101);
+            this.IRCheck.Location = new System.Drawing.Point(133, 117);
             this.IRCheck.Name = "IRCheck";
             this.IRCheck.Size = new System.Drawing.Size(135, 21);
             this.IRCheck.TabIndex = 10;
@@ -321,7 +333,7 @@
             // TAACheckBox
             // 
             this.TAACheckBox.AutoSize = true;
-            this.TAACheckBox.Location = new System.Drawing.Point(10, 101);
+            this.TAACheckBox.Location = new System.Drawing.Point(10, 117);
             this.TAACheckBox.Name = "TAACheckBox";
             this.TAACheckBox.Size = new System.Drawing.Size(50, 21);
             this.TAACheckBox.TabIndex = 9;
@@ -394,7 +406,7 @@
             // 
             // CheckForUpdateLabel
             // 
-            this.CheckForUpdateLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (134)));
+            this.CheckForUpdateLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CheckForUpdateLabel.Location = new System.Drawing.Point(299, 486);
             this.CheckForUpdateLabel.Name = "CheckForUpdateLabel";
             this.CheckForUpdateLabel.Size = new System.Drawing.Size(181, 22);
@@ -402,6 +414,18 @@
             this.CheckForUpdateLabel.TabStop = true;
             this.CheckForUpdateLabel.Text = "检测更新";
             this.CheckForUpdateLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CheckForUpdateLabel_LinkClicked);
+            // 
+            // DisplayModeComboBox
+            // 
+            this.DisplayModeComboBox.FormattingEnabled = true;
+            this.DisplayModeComboBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
+            this.DisplayModeComboBox.Location = new System.Drawing.Point(139, 85);
+            this.DisplayModeComboBox.Name = "DisplayModeComboBox";
+            this.DisplayModeComboBox.Size = new System.Drawing.Size(129, 25);
+            this.DisplayModeComboBox.TabIndex = 15;
             // 
             // ToolBox
             // 
@@ -417,7 +441,7 @@
             this.Controls.Add(this.WebUIButton);
             this.Controls.Add(this.ClearDNSButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ToolBox";
             this.Text = "Project DIVA Online Tool Box";
             this.Load += new System.EventHandler(this.ToolBox_Load);
@@ -428,7 +452,10 @@
             this.GraphicsSettingsGroupBox.ResumeLayout(false);
             this.GraphicsSettingsGroupBox.PerformLayout();
             this.ResumeLayout(false);
+
         }
+
+        private System.Windows.Forms.Label DisplayLabel;
 
         private System.Windows.Forms.LinkLabel CheckForUpdateLabel;
 
@@ -464,8 +491,10 @@
         private System.Windows.Forms.Label GraphicsAPIStatusLabel;
         private System.Windows.Forms.CheckBox DirectXCheckBox;
         private System.Windows.Forms.Button SaveGraphicsButton;
-        
+
         #endregion
+
+        private System.Windows.Forms.ComboBox DisplayModeComboBox;
     }
 }
 
