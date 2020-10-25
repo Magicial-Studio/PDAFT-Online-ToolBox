@@ -47,6 +47,7 @@
             this.SubnetLabel = new System.Windows.Forms.Label();
             this.SubnetTextBox = new System.Windows.Forms.TextBox();
             this.GraphicsSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DisplayModeComboBox = new System.Windows.Forms.ComboBox();
             this.DisplayLabel = new System.Windows.Forms.Label();
             this.SaveGraphicsButton = new System.Windows.Forms.Button();
             this.DirectXCheckBox = new System.Windows.Forms.CheckBox();
@@ -62,7 +63,6 @@
             this.WidthTextBox = new System.Windows.Forms.TextBox();
             this.RLabel = new System.Windows.Forms.Label();
             this.CheckForUpdateLabel = new System.Windows.Forms.LinkLabel();
-            this.DisplayModeComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.ServerSettingsGroupBox.SuspendLayout();
             this.GraphicsSettingsGroupBox.SuspendLayout();
@@ -281,9 +281,24 @@
             this.GraphicsSettingsGroupBox.TabStop = false;
             this.GraphicsSettingsGroupBox.Text = "显示设定";
             // 
+            // DisplayModeComboBox
+            // 
+            this.DisplayModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DisplayModeComboBox.FormattingEnabled = true;
+            this.DisplayModeComboBox.Items.AddRange(new object[] {
+            "窗口化",
+            "无边窗口化",
+            "独占全屏",
+            "安全模式"});
+            this.DisplayModeComboBox.Location = new System.Drawing.Point(139, 85);
+            this.DisplayModeComboBox.MaxDropDownItems = 4;
+            this.DisplayModeComboBox.Name = "DisplayModeComboBox";
+            this.DisplayModeComboBox.Size = new System.Drawing.Size(113, 25);
+            this.DisplayModeComboBox.TabIndex = 15;
+            // 
             // DisplayLabel
             // 
-            this.DisplayLabel.Location = new System.Drawing.Point(6, 85);
+            this.DisplayLabel.Location = new System.Drawing.Point(6, 88);
             this.DisplayLabel.Name = "DisplayLabel";
             this.DisplayLabel.Size = new System.Drawing.Size(87, 23);
             this.DisplayLabel.TabIndex = 14;
@@ -366,7 +381,7 @@
             // IRLabel
             // 
             this.IRLabel.AutoSize = true;
-            this.IRLabel.Location = new System.Drawing.Point(6, 61);
+            this.IRLabel.Location = new System.Drawing.Point(6, 58);
             this.IRLabel.Name = "IRLabel";
             this.IRLabel.Size = new System.Drawing.Size(92, 17);
             this.IRLabel.TabIndex = 4;
@@ -414,18 +429,6 @@
             this.CheckForUpdateLabel.TabStop = true;
             this.CheckForUpdateLabel.Text = "检测更新";
             this.CheckForUpdateLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CheckForUpdateLabel_LinkClicked);
-            // 
-            // DisplayModeComboBox
-            // 
-            this.DisplayModeComboBox.FormattingEnabled = true;
-            this.DisplayModeComboBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2"});
-            this.DisplayModeComboBox.Location = new System.Drawing.Point(139, 85);
-            this.DisplayModeComboBox.Name = "DisplayModeComboBox";
-            this.DisplayModeComboBox.Size = new System.Drawing.Size(129, 25);
-            this.DisplayModeComboBox.TabIndex = 15;
             // 
             // ToolBox
             // 

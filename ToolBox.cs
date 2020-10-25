@@ -117,6 +117,18 @@ namespace PDAFT_Online_ToolBox
                 if (!subnet.Equals(testedSubnet))
                     BeginInvoke(new Action(() => { SubnetTextBox.Text = testedSubnet; }));
             });
+            switch (_config["Resolution"]["Display"])
+            {
+                case "0" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("窗口化"); 
+                    break;
+                case "1" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("无边窗口化");
+                    break;
+                case "2" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("独占全屏");
+                    break;
+                case "3" : DisplayModeComboBox.SelectedIndex = DisplayModeComboBox.Items.IndexOf("安全模式");
+                    break;
+                        
+            }
         }
 
         private void UpdateGraphicsAPIStatusLabel()
@@ -244,51 +256,70 @@ namespace PDAFT_Online_ToolBox
             _config["Resolution"]["r.Height"] = RHeightTextBox.Text;
             _config["Resolution"]["r.Width"] = RWidthTextBox.Text;
             RHeightTextBox.Enabled = RWidthTextBox.Enabled = IRCheck.Checked;
+            switch (DisplayModeComboBox.SelectedItem.ToString())
+            {
+                case "窗口化" : _config["Resolution"]["Display"]="0"; 
+                    break;
+                case "无边窗口化" : _config["Resolution"]["Display"]="1"; 
+                    break;
+                case "独占全屏" : _config["Resolution"]["Display"]="2";
+                    break;
+                case "安全模式" : _config["Resolution"]["Display"]="3";
+                    break;
+                        
+            }
 
             _iniParser.WriteFile("plugins\\config.ini", _config);
             _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
         }
-         private void CheckForUpdates( bool notifyOnFail )
+        private void CheckForUpdates(bool notifyOnFail)
         {
-
-            try
+            if (Program.UnstableVersion)
             {
-                using ( var client = new WebClient() )
+                CheckForUpdateLabel.Text = "测试版本:Version " + Program.Version;
+                CheckForUpdateLabel.Enabled = false;
+            }
+            else
+            {
+                try
                 {
-                    client.Headers.Add( "user-agent", Program.Name );
-                    string response = client.DownloadString("https://api.github.com/repos/Magicial-Studio/PDAFT-Online-Toolbox/releases/latest");
-
-                    // yes this is pure crackheadery
-                    // no I won't use a json library
-
-                    int index = response.IndexOf( "tag_name", StringComparison.OrdinalIgnoreCase );
-
-                    int firstIndex = response.IndexOf( ':', index + 8 );
-                    int lastIndex = response.IndexOf( ',', firstIndex + 1 );
-
-                    string tagName = Program.FixUpVersionString( response.Substring( firstIndex + 1, lastIndex - firstIndex - 1 ).Trim( '"', ',', 'v', ' ' ) );
-
-                    if ( tagName != Program.Version )
+                    using (var client = new WebClient())
                     {
-                        CheckForUpdateLabel.Text = "需要更新 最新版本： " + tagName;
-                        Program.UpdateCheckedSucceed = true;
-                    }
+                        client.Headers.Add("user-agent", Program.Name);
+                        string response = client.DownloadString("https://api.github.com/repos/Magicial-Studio/PDAFT-Online-Toolbox/releases/latest");
 
-                    else if ( notifyOnFail )
-                    {
-                        
+                        // yes this is pure crackheadery
+                        // no I won't use a json library
+
+                        int index = response.IndexOf("tag_name", StringComparison.OrdinalIgnoreCase);
+
+                        int firstIndex = response.IndexOf(':', index + 8);
+                        int lastIndex = response.IndexOf(',', firstIndex + 1);
+
+                        string tagName = Program.FixUpVersionString(response.Substring(firstIndex + 1, lastIndex - firstIndex - 1).Trim('"', ',', 'v', ' '));
+
+                        if (tagName != Program.Version)
+                        {
+                            CheckForUpdateLabel.Text = "需要更新 最新版本： " + tagName;
+                            Program.UpdateCheckedSucceed = true;
+                        }
+
+                        else if (notifyOnFail)
+                        {
+
                             CheckForUpdateLabel.Text = "已为最新:Version " + tagName;
                             CheckForUpdateLabel.Enabled = false;
                             Program.UpdateCheckedSucceed = true;
+                        }
                     }
                 }
-            }
 
-            catch
-            {
-                if ( !notifyOnFail )
-                    return;
-                CheckForUpdateLabel.Text = "更新检查失败";
+                catch
+                {
+                    if (!notifyOnFail)
+                        return;
+                    CheckForUpdateLabel.Text = "更新检查失败";
+                }
             }
         }
 
