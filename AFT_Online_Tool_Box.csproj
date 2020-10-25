@@ -14,7 +14,6 @@
   <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   <LangVersion>latest</LangVersion>
   <Authors>Magicial Studio</Authors>
-  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 </PropertyGroup>
 
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
