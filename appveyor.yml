@@ -1,4 +1,4 @@
-version: 3.1.unstable.{build}
+version: 3.2.unstable.{build}
 skip_tags: true
 configuration: Release
 platform: Any CPU
@@ -9,4 +9,3 @@ build:
   verbosity: minimal
 artifacts:
 - path: bin\Release\PDAFT_Online_ToolBox.exe
-
