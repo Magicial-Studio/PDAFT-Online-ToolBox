@@ -289,7 +289,7 @@
             "窗口化",
             "无边窗口化",
             "独占全屏",
-            "安全模式"});
+            "无显示"});
             this.DisplayModeComboBox.Location = new System.Drawing.Point(139, 85);
             this.DisplayModeComboBox.MaxDropDownItems = 4;
             this.DisplayModeComboBox.Name = "DisplayModeComboBox";
