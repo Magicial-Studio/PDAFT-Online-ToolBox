@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IniParser;
@@ -202,32 +203,32 @@ namespace PDAFT_Online_ToolBox
         {
             _components["components"]["fast_loader"] = FastLoaderCheckBox.Checked.ToString().ToLowerInvariant();
             if (FastLoaderCheckBox.Checked) _components["components"]["fast_loader_speed"] = "4";
-            _iniParser.WriteFile("plugins\\components.ini", _components);
+            _iniParser.WriteFile("plugins\\components.ini", _components,Encoding.Default);
         }
 
         private void ScoreSaverCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             _components["components"]["score_saver"] = ScoreSaverCheckBox.Checked.ToString().ToLowerInvariant();
-            _iniParser.WriteFile("plugins\\components.ini", _components);
+            _iniParser.WriteFile("plugins\\components.ini", _components,Encoding.Default);
         }
 
         private void PlayerDataManagerCheckBox_Click(object sender, EventArgs e)
         {
             _components["components"]["player_data_manager"] = PlayerDataManagerCheckBox.Checked.ToString().ToLowerInvariant();
-            _iniParser.WriteFile("plugins\\components.ini", _components);
+            _iniParser.WriteFile("plugins\\components.ini", _components,Encoding.Default);
         }
 
         private void StageManagerCheckBox_Click(object sender, EventArgs e)
         {
             _components["components"]["stage_manager"] = StageManagerCheckBox.Checked.ToString().ToLowerInvariant();
-            _iniParser.WriteFile("plugins\\components.ini", _components);
+            _iniParser.WriteFile("plugins\\components.ini", _components,Encoding.Default);
         }
 
         private void SaveGameServerButton_Click(object sender, EventArgs e)
         {
             _segatools["dns"]["default"] = GameServerTextBox.Text;
             _segatools["keychip"]["subnet"] = SubnetTextBox.Text;
-            _segatoolsIniParser.WriteFile("segatools.ini", _segatools);
+            _segatoolsIniParser.WriteFile("segatools.ini", _segatools,Encoding.Default);
         }
 
         private void SaveGraphicsButton_Click(object sender, EventArgs e)
@@ -244,8 +245,8 @@ namespace PDAFT_Online_ToolBox
             RHeightTextBox.Enabled = RWidthTextBox.Enabled = IRCheck.Checked;
             _config["Resolution"]["Display"] = DisplayModeComboBox.SelectedIndex.ToString();
 
-            _iniParser.WriteFile("plugins\\config.ini", _config);
-            _iniParser.WriteFile("plugins\\graphics.ini", _graphics);
+            _iniParser.WriteFile("plugins\\config.ini", _config,Encoding.Default);
+            _iniParser.WriteFile("plugins\\graphics.ini", _graphics,Encoding.Default);
         }
 
         private void CheckForUpdates(bool notifyOnFail)
