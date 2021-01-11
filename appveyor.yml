@@ -1,4 +1,4 @@
-version: 3.2.unstable.{build}
+version: 3.3.unstable.{build}
 skip_tags: true
 configuration: Release
 platform: Any CPU
