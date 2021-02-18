@@ -61,9 +61,9 @@ namespace PDAFT_Online_ToolBox
             try
             {
                 _components = _iniParser.ReadFile("plugins\\components.ini");
-                _graphics = _iniParser.ReadFile("plugins\\graphics.ini");
+                if (File.Exists("plugins\\DivaImGui.dva")) _graphics = _iniParser.ReadFile("plugins\\graphics.ini");
                 _config = _iniParser.ReadFile("plugins\\config.ini");
-                if (File.Exists("\\plugins\\DivaImGui.dva")) _segatools = _segatoolsIniParser.ReadFile("segatools.ini");
+                _segatools = _segatoolsIniParser.ReadFile("segatools.ini");
             }
             catch (Exception exception)
             {
@@ -75,7 +75,7 @@ namespace PDAFT_Online_ToolBox
 
             TAACheckBox.Checked = _config["Graphics"]["TAA"] == "1";
             MLAACheckBox.Checked = _config["Graphics"]["MLAA"] == "1";
-            if (File.Exists("\\plugins\\DivaImGui.dva"))
+            if (File.Exists("plugins\\DivaImGui.dva"))
             {
                 DirectXCheckBox.Checked = _graphics.Global["dxgi"] == "1";
                 UpdateGraphicsAPIStatusLabel();

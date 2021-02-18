@@ -16,19 +16,18 @@ namespace PDAFT_Online_ToolBox
         {
             DisabledMdataListBox.Items.Clear();
             EnabledMdataListBox.Items.Clear();
-            DirectoryInfo EnabledMdataDirectory=new DirectoryInfo(Directory.GetCurrentDirectory()+"\\mdata");
-            DirectoryInfo DisabledMdataDirectory=new DirectoryInfo(Directory.GetCurrentDirectory()+"\\mdata\\Disabled");
+            DirectoryInfo EnabledMdataDirectory=new DirectoryInfo("mdata");
+            DirectoryInfo DisabledMdataDirectory=new DirectoryInfo("mdata\\Disabled");
             try
             {
                 foreach (DirectoryInfo EnabledMdata in EnabledMdataDirectory.GetDirectories())
                 {
-                    EnabledMdataListBox.Items.Add(EnabledMdata.ToString().Replace(Directory.GetCurrentDirectory(),""));
+                    EnabledMdataListBox.Items.Add(EnabledMdata.ToString());
                 }
                 EnabledMdataListBox.Items.Remove("Disabled");
                 foreach (DirectoryInfo DisabledMdata in DisabledMdataDirectory.GetDirectories())
                 {
-                    DisabledMdataListBox.Items.Add(DisabledMdata.ToString()
-                        .Replace(Directory.GetCurrentDirectory() + "\\mdata", ""));
+                    DisabledMdataListBox.Items.Add(DisabledMdata.ToString());
                 }
 
 
@@ -41,7 +40,7 @@ namespace PDAFT_Online_ToolBox
 
         private void MdataManager_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists(Directory.GetCurrentDirectory() + "\\mdata\\Disabled")) Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\mdata\\Disabled");
+            if (!Directory.Exists( "mdata\\Disabled")) Directory.CreateDirectory("mdata\\Disabled");
             RefreshMdata();
         }
 
@@ -52,8 +51,8 @@ namespace PDAFT_Online_ToolBox
                 try
                 {
                     Directory.Move(
-                        Directory.GetCurrentDirectory() + "\\mdata\\Disabled\\" + DisabledMdataListBox.SelectedItem,
-                        Directory.GetCurrentDirectory() + "\\mdata\\" + DisabledMdataListBox.SelectedItem);
+                        "mdata\\Disabled\\" + DisabledMdataListBox.SelectedItem,
+                        "mdata\\" + DisabledMdataListBox.SelectedItem);
                     RefreshMdata();
                 }
                 catch (Exception exception)
@@ -73,8 +72,8 @@ namespace PDAFT_Online_ToolBox
             {
                 try
                 {
-                    Directory.Move(Directory.GetCurrentDirectory()+"\\mdata\\"+EnabledMdataListBox.SelectedItem ,
-                        Directory.GetCurrentDirectory()+"\\mdata\\Disabled\\"+EnabledMdataListBox.SelectedItem);
+                    Directory.Move("mdata\\"+EnabledMdataListBox.SelectedItem ,
+                        "mdata\\Disabled\\"+EnabledMdataListBox.SelectedItem);
                     RefreshMdata();
                 }
                 catch (Exception exception)
