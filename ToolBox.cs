@@ -1,12 +1,16 @@
 using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
+using Application = System.Windows.Forms.Application;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace PDAFT_Online_ToolBox
 {
@@ -98,7 +102,7 @@ namespace PDAFT_Online_ToolBox
 
             var subnet = _segatools["keychip"]["subnet"];
             SubnetTextBox.Text = subnet;
-            await Task.Run(() => CheckForUpdates(true));
+            //await Task.Run(() => CheckForUpdates(true));
             //CheckForUpdates((true));
 
             await Task.Run(() =>
@@ -303,6 +307,13 @@ namespace PDAFT_Online_ToolBox
         {
             if (Program.UpdateCheckedSucceed) Process.Start("https://github.com/Magicial-Studio/PDAFT-Online-Toolbox/releases");
             else CheckForUpdates(true);
+        }
+
+        private void LaunchMdataManager_Click(object sender, EventArgs e)
+        {
+            MdataManager LaunchMdataManager = new MdataManager();
+            LaunchMdataManager.Show();
+
         }
     }
 }
