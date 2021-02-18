@@ -1,0 +1,33 @@
+=======Tutorial=======
+
+	0. Get a unmodified diva.exe (This means you didn't use the prepatch.exe come with the very old launcher)
+	1. Download the PD-Loader-with-segatools.zip
+	2. Make a backup to the plugins folder in the diva folder.
+	3. Unzip everything from PD-Loader-with-segatools.zip to your diva folder.
+	4. Open segatools.ini with notepad (or any editor your use).
+	5. Find the "default=localhost" line, >>>> change the localhost to the server address your want to connect.<<<<
+	6. Run the start.bat to start game.
+
+=======FAQ=======
+	How to login?
+		When you start the game there is a CARD LOGIN and GUEST PLAY screed. Long press ENTER key here, the game will emulater a card to let you login.
+	I want to change settings:
+		Run diva.exe you can change the settings. After saving you need to run start.bat to launch the game.
+
+=======Troubleshooting=======
+The game won't run:
+	Try:
+		1. Run start.bat as admin
+		2. Check the the plugins folder is being replaced with the new file.
+
+The game run but CARD SYSTEM NG:
+	If:
+		You can see the launcher when your run the game:
+			You need to run game with start.bat. That will skip the launcher for you.
+		Run start.bat as admin.
+
+CARD SYSTEM OK but NET PARAM NG:
+	Check your segatools.ini, you must change the "default=localhost" to the server address. And localhost or 127.0.0.1 can not be use here.
+
+I have other error:
+	Please ask in #help

@@ -1,4 +1,4 @@
-version: 3.3.unstable.{build}
+version: 4.0.unstable.{build}
 skip_tags: true
 configuration: Release
 platform: Any CPU
@@ -7,5 +7,8 @@ before_build:
 build:
   project: AFT_Online_Tool_Box.sln
   verbosity: minimal
+after_build:
+- cmd: "mkdir PDAFT-Online-Toolbox\ncopy bin\\Release\\PDAFT_Online_Toolbox.exe PDAFT-Online-Toolbox\nxcopy SegaTools PDAFT-Online-Toolbox /E /Y  \nxcopy PD-Loader PDAFT-Online-Toolbox /E /Y"
 artifacts:
-- path: bin\Release\PDAFT_Online_ToolBox.exe
+- path: PDAFT-Online-Toolbox
+  name: PDAFT-Online-Toolbox
