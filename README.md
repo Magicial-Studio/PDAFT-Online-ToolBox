@@ -25,9 +25,11 @@ PDAFT-Online-Toolbox是一个基于C#开发的PDAFT工具箱程序
 GPL 3.0
 
 ## 此项目使用(依赖）的其他项目
-[PD-Loader] (https://notabug.org/PDModdingCommunity/PD-Loader) By PDModdingCommunity
+[PD-Loader](https://notabug.org/PDModdingCommunity/PD-Loader) By PDModdingCommunity
+
 SegaTools By Samnyan
-[ini-parser] (https://github.com/rickyah/ini-parser) By rickyah
+
+[ini-parser](https://github.com/rickyah/ini-parser) By rickyah
 
 ## 使用软件
 
