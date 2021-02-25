@@ -200,13 +200,13 @@ namespace PDAFT_Online_ToolBox
             switch (UsePDLoaderButton.Text)
             {
                 case "启用PD-Loader":
-                    _config["plugins"]["Launcher.dva"]="1"
-                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default)
-                    UsePDLoaderButton.Text="禁用PD-Loader"
+                    _config["plugins"]["Launcher.dva"]="1";
+                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default);
+                    UsePDLoaderButton.Text="禁用PD-Loader";
                     break;
                 case "禁用PD-Loader":
-                    _config["plugins"]["Launcher.dva"]="0"
-                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default)
+                    _config["plugins"]["Launcher.dva"]="0";
+                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default);
                     UsePDLoaderButton.Text = "启用PD-Loader";
                     break;
             }
