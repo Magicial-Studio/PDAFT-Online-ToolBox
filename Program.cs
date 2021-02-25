@@ -12,7 +12,7 @@ namespace PDAFT_Online_ToolBox
         private static string sVersion;
         public static string Name => "PDAFT Online Toolbox";
         public static bool UpdateCheckedSucceed = false;
-        public static bool UnstableVersion = false;
+        public static bool UnstableVersion = true;
         public static string Version
         {
             get

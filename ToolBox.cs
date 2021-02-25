@@ -101,7 +101,7 @@ namespace PDAFT_Online_ToolBox
 
             StageManagerCheckBox.Checked = _components["components"]["stage_manager"] == "true";
 
-            UsePDLoaderButton.Text = !File.Exists("plugins\\Launcher.dva") ? "启用PD-Loader" : "禁用PD-Loader";
+            UsePDLoaderButton.Text = _config["plugins"]["Launcher.dva"]=="1"?"启用PD-Loader" : "禁用PD-Loader";
 
             GameServerTextBox.Text = _segatools["dns"]["default"];
 
@@ -200,11 +200,13 @@ namespace PDAFT_Online_ToolBox
             switch (UsePDLoaderButton.Text)
             {
                 case "启用PD-Loader":
-                    File.Move("Launcher.dva", "plugins\\Launcher.dva");
-                    UsePDLoaderButton.Text = "禁用PD-Loader";
+                    _config["plugins"]["Launcher.dva"]="1"
+                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default)
+                    UsePDLoaderButton.Text="禁用PD-Loader"
                     break;
                 case "禁用PD-Loader":
-                    File.Move("plugins\\Launcher.dva", "Launcher.dva");
+                    _config["plugins"]["Launcher.dva"]="0"
+                    _iniParser.WriteFile("plugins\\config.ini",_config,Encoding.Default)
                     UsePDLoaderButton.Text = "启用PD-Loader";
                     break;
             }
